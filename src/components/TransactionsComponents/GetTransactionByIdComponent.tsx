@@ -1,8 +1,48 @@
 import React from 'react';
 import { TransactionTabsComponent } from '../TabsComponents/TransactionTabsComponent';
 import { Table } from 'react-bootstrap';
+import Axios from 'axios';
 
 export class GetTransactionByIdComponent extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            transactionid: 0,
+            amount: 0,
+            recipient: "",
+            trasactionDate: "",
+            transactionType: "",
+            transaction: []
+        };
+    }
+
+    handleChange(event: any) {
+        const value = event.target.value;
+        this.setState({
+            ...this.state,
+            transactionid: value
+        });
+    }
+
+    handlesubmit() {
+        alert(`You have retrieved the transaction with id of ${this.state.transactionid}`);
+        const url = `http://localhost:8080/app/transactions/transaction/${this.state.transactionid}`;
+        Axios.get(url).then(payload => {
+            this.setState({
+                ...this.state,
+                transaction: (
+                    <tr key={this.state.transactionid}>
+                        <th>{payload.data.transactionid}</th>
+                        <th>{payload.data.amount}</th>
+                        <th>{payload.data.recipient}</th>
+                        <th>{payload.data.transactionDate}</th>
+                        <th>{payload.data.transactionType}</th>
+                    </tr>
+                )
+            })
+        })
+    }
     render() {
         return (
             <div>
@@ -12,9 +52,9 @@ export class GetTransactionByIdComponent extends React.Component<any, any> {
                     <TransactionTabsComponent />
                     <div className="get-transaction-information-by-id-split get-transaction-information-by-id-left">
                             <div className="get-transaction-information-by-id-centered">
-                                <input type="number" placeholder="Enter Transaction ID Number" />
+                                <input type="number" placeholder="Enter Transaction ID Number" value={this.state.transactionid} onChange={(event: any) => this.handleChange(event)}/>
                                 <br></br><br></br>
-                                <button className="btn-dark">Submit</button>
+                                <button className="btn-dark" onClick={() => this.handlesubmit()}>Submit</button>
                             </div>
                         </div>
                         <div className="get-transaction-information-by-id-split get-transaction-information-by-id-right">
@@ -23,16 +63,15 @@ export class GetTransactionByIdComponent extends React.Component<any, any> {
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>F.Name</th>
-                                                <th>L.Name</th>
-                                                <th>Address</th>
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Zip</th>
-                                                <th>Phone</th>
-                                                <th>Email</th>
+                                                <th>Amount</th>
+                                                <th>Recipient</th>
+                                                <th>Date</th>
+                                                <th>Type</th>
                                             </tr>
-                                            </thead>
+                                        </thead>
+                                        <tbody>
+                                            {this.state.transaction}
+                                        </tbody>
                                     </Table>
                             </div>
                         </div>

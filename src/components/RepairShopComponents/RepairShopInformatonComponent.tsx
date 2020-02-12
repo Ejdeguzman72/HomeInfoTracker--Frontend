@@ -1,11 +1,15 @@
 import React from 'react';
+import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
 
 export class RepairShopInformationComponent extends React.Component<any, any> {
     render() {
         return (
             <div>
-                <h1>Car Repair Shop Information</h1>
-                <hr></hr>
+                <div id="hero-repair-information-background">
+                    <h1>Repair Shop Information</h1>
+                    <hr></hr>
+                    <RepairShopTabsComponent />
+                </div>
             </div>
         )
     }

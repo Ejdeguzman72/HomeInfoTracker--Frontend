@@ -13,8 +13,12 @@
   border-color: black;
 }
 
+.dropdown-color {
+  color: black;
+}
+
 #hero-home {
-  background-image: url('./assets/home-background-image.jpg');
+  background-image: url('./assets/Long-row-of-suburban-townhouses-with-a-white-picket-fence-in-front.-min-e1442000949923.jpg');
   background-size: cover;
   background-position: center center;
   top: 0;
@@ -380,7 +384,7 @@ CSS for Contact Information Pages
   background-position: center center;
   top: 0;
   bottom: 0;
-  height: 100vh;
+  height: 300vh;
   width: 100%;
   z-index: -10;
   margin: 0;
@@ -465,14 +469,13 @@ CSS for Contact Information Pages
   border-style: solid;
   border-color: black;
   left: 0;
-  font-size: 10px;
+  font-size: 5px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  padding: 15px;
 }
 
 .add-contact-information-by-id-right {
   right: 0;
-  font-size: 30px;
+  font-size: 15px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
@@ -486,7 +489,7 @@ CSS for Contact Information Pages
 }
 
 .centered {
-  text-align: right;
+  text-align: center;
 }
 #hero-update-contact-information-background {
   background-image: url('./assets/page-background.jpg');
@@ -500,7 +503,8 @@ CSS for Contact Information Pages
   margin: 0;
   /* position: absolute; */
   opacity: 0.9;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
 }
 
 #hero-delete-contact-information-background {
@@ -511,8 +515,8 @@ CSS for Contact Information Pages
   bottom: 0;
   height: 100vh;
   width: 100%;
-  font-size: 20px;
-  z-index: -10;
+  /* font-size: 20px; */
+  /* z-index: -10; */
   margin: 0;
   /* position: absolute; */
   opacity: 0.9;
@@ -524,36 +528,6 @@ CSS for Contact Information Pages
 CSS for Repair Shop Information 
 */
 
-.get-car-record-information-by-id-split {
-  /* height: 100%; */
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  /* margin: auto; */
-  /* overflow-x: hidden;
-  padding-top: 20px; */
-}
-
-.get-car-record-information-by-id-left {
-  left: 0;
-  font-size: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.get-car-record-information-by-id-right {
-  right: 0;
-  font-size: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-}
-
-.get-car-record-information-by-id-centered {
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-50%, 20%);
-  text-align: center;
-}
-
 #hero-repair-information-background {
   background-image: url('./assets/page-background.jpg');
   background-size: cover;
@@ -564,9 +538,115 @@ CSS for Repair Shop Information
   width: 100%;
   z-index: -10;
   margin: 0;
-  position: relative;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#hero-get-all-repair-shop-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+  
+#hero-get-repair-shop-information-by-id-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
   opacity: 0.9;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.get-repair-shop-information-by-id-split {
+  /* height: 100%; */
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  /* margin: auto; */
+  /* overflow-x: hidden;
+  padding-top: 20px; */
+}
+  
+.get-repair-shop-information-by-id-left {
+  left: 0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+  
+.get-repair-shop-information-by-id-right {
+  right: 0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+  
+.get-repair-shop-information-by-id-centered {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, 20%);
+  text-align: center;
+}
+
+#hero-add-repair-shop-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#hero-update-repair-shop-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#hero-delete-repair-shop-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  /* font-size: 20px; */
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 /* ---------------------------------------------------------------------------------------*/
 
@@ -712,12 +792,151 @@ CSS for Transaction Information
 }
 /* -------------------------------------------------------------------------------------------*/
 
+/* -----------------------------------------------------------------------------------
+CSS for Bank Information 
+*/
+
+#bank-information-container {
+  margin: 15px;
+  padding: 25px;
+  text-align: center;
+  font-size: 30px;
+  width: 50%;
+}
+
+#bank-information-p-border {
+  border-style: solid;
+  border-color: black;
+  padding: 25px;
+}
+
+#hero-bank-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#hero-get-all-bank-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#hero-get-bank-information-by-id-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.get-bank-information-by-id-split {
+  /* height: 100%; */
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  /* margin: auto; */
+  /* overflow-x: hidden;
+  padding-top: 20px; */
+}
+
+.get-bank-information-by-id-left {
+  left: 0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.get-bank-information-by-id-right {
+  right: 0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.get-bank-information-by-id-centered {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, 20%);
+  text-align: center;
+}
+
+#hero-add-bank-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#hero-update-bank-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#hero-delete-bank-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  font-size: 20px;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
 /* ----------------------------------------------------------------------------------------------
 CSS For Fun Applications 
 */
 
 #hero-to-do-list-component-background {
-  background-image: url('./assets/page-background.jpg');
+  background-image: url('./assets/Long-row-of-suburban-townhouses-with-a-white-picket-fence-in-front.-min-e1442000949923.jpg');
   background-size: cover;
   background-position: center center;
   top: 0;
@@ -766,4 +985,29 @@ CSS For Fun Applications
 
 #to-do-list-item {
   list-style: none;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height: 150px;
+  max-width: 150px;
+  /* margin: auto; */
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 15px;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  color: white;
+}
+
+.card button:hover {
+  opacity: 0.7;
 }

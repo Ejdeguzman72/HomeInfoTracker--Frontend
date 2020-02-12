@@ -10,7 +10,7 @@ export class ContactTabsComponent extends React.Component<any, any> {
                         <div className="form-row">
                             <ul className="nav nav-tabs">
                                 <li className="nav-item">
-                                    <Link to="/get-all-contact-information" className="nav-link" href="#" id="tab-link">Get All Contact Information</Link>
+                                    <Link to="/app/contact-book/all" className="nav-link" href="#" id="tab-link">Get All Contact Information</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to="/get-contact-information-by-id" className="nav-link" href="#" id="tab-link">Get Contact Information By ID</Link>

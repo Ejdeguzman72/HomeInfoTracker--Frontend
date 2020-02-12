@@ -1,8 +1,49 @@
 import React from 'react';
 import { CarTabsComponent } from '../TabsComponents/CarTabsComponent';
 import { Table } from 'react-bootstrap';
+import Axios from 'axios';
 
 export class GetAllCarsComponent extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            carid: 0,
+            make: "",
+            model: "",
+            year: "",
+            capacity: 0,
+            transmission: "",
+            ac: "",
+            cars: []
+        };
+    }
+
+    async componentDidMount() {
+        alert("You have retrieved all car information");
+        const url = "http://localhost:8080/app/cars/all";
+
+        Axios.get(url).then(payload => {
+            this.setState({
+                ...this.state,
+                cars: payload.data.map((o: any) => {
+                    return (
+                        <tr key={o.carid}>
+                            <th scope="row">{o.carid}</th>
+                            <td>{o.make}</td>
+                            <td>{o.model}</td>
+                            <td>{o.year}</td>
+                            <td>{o.capacity}</td>
+                            <td>{o.transmission}</td>
+                            <td>{o.ac}</td>
+                        </tr>
+                    )
+                })
+            })
+        })
+
+    }
+
     render() {
         return (
             <div>
@@ -24,74 +65,9 @@ export class GetAllCarsComponent extends React.Component<any, any> {
                                 <th>AC</th>
                                 </tr>
                             </thead>
-                            {/* <tbody>
-                                <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                            </tbody> */}
+                            <tbody>
+                               {this.state.cars}
+                            </tbody>
                             </Table>
                         </div>
                     </div>

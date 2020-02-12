@@ -1,0 +1,315 @@
+/* ----------------------------------------------------------------------------------------
+CSS for Transaction Information 
+*/
+
+#transaction-information-container {
+    margin: 15px;
+    padding: 25px;
+    text-align: center;
+    font-size: 30px;
+    width: 50%;
+  }
+  
+  #transaction-information-p-border {
+    border-style: solid;
+    border-color: black;
+    padding: 25px;
+  }
+  
+  #hero-transaction-information-background {
+    background-image: url('./assets/page-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    /* bottom: 0; */
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    /* position: relative; */
+    opacity: 0.9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  #hero-get-all-transaction-information-background {
+    background-image: url('./assets/page-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    /* bottom: 0; */
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    /* position: relative; */
+    opacity: 0.9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  #hero-get-transaction-information-by-id-background {
+    background-image: url('./assets/page-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    /* bottom: 0; */
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    /* position: relative; */
+    opacity: 0.9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  #hero-add-transaction-information-background {
+    background-image: url('./assets/page-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    /* bottom: 0; */
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    /* position: relative; */
+    opacity: 0.9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .add-transaction-information-by-id-split {
+    /* height: 100%; */
+    width: 50%;
+    position: relative;
+    z-index: 1;
+    /* margin: auto; */
+    /* overflow-x: hidden;
+    padding-top: 20px; */
+  }
+  
+  .add-transaction-information-by-id-left {
+    border-style: solid;
+    border-color: black;
+    left: 0;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .add-transaction-information-by-id-right {
+    right: 0;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  }
+  
+  .add-transaction-information-by-id-centered {
+    position: relative;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, 20%);
+    text-align: center;
+  }
+  
+  #hero-update-transaction-information-background {
+    background-image: url('./assets/page-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    /* bottom: 0; */
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    /* position: relative; */
+    opacity: 0.9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  #hero-delete-transaction-information-background {
+    background-image: url('./assets/page-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    /* bottom: 0; */
+    height: 100vh;
+    width: 100%;
+    font-size: 20px;
+    z-index: -10;
+    margin: 0;
+    /* position: relative; */
+    opacity: 0.9;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  /* -------------------------------------------------------------------------------------------*/
+
+  /* ----------------------------------------------------------------------------------------
+CSS for Car Record Information 
+*/
+
+.get-card-information-by-id-split {
+  /* height: 100%; */
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  /* margin: auto; */
+  /* overflow-x: hidden;
+  padding-top: 20px; */
+}
+
+.get-card-information-by-id-left {
+  left: 0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.get-card-information-by-id-right {
+  right: 0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.get-card-information-by-id-centered {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, 20%);
+  text-align: center;
+}
+
+#card-information-container {
+  margin: 15px;
+  padding: 25px;
+  text-align: center;
+  font-size: 30px;
+  width: 50%;
+}
+
+#card-information-p-border {
+  border-style: solid;
+  border-color: black;
+  padding: 25px;
+}
+
+#hero-card-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  /* opacity: 0.9; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#hero-get-all-card-information-background {
+    background-image: url('./assets/page-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+    margin: 0;
+    /* position: absolute; */
+    /* opacity: 0.9; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#hero-get-card-information-by-id-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  /* opacity: 0.9; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#hero-add-card-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  /* opacity: 0.9; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.add-card-information-by-id-split {
+  /* height: 100%; */
+  width: 50%;
+  position: relative;
+  z-index: 1;
+  /* margin: auto; */
+  /* overflow-x: hidden;
+  padding-top: 20px; */
+}
+
+.add-card-information-by-id-left {
+  border-style: solid;
+  border-color: black;
+  left: 0;
+  font-size: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 15px;
+}
+
+.add-card-information-by-id-right {
+  right: 0;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.add-card-information-by-id-centered {
+  /* position: relative; */
+  top: 40%;
+  left: 30%;
+  /* transform: translate(-50%, 20%); */
+  text-align: center;
+  /* padding: 15px; */
+}
+
+
+#hero-update-card-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  /* opacity: 0.9; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#hero-delete-card-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  font-size: 20px;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -10;
+  margin: 0;
+  /* position: absolute; */
+  /* opacity: 0.9; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}

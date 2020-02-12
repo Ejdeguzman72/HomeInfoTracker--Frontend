@@ -1,26 +1,69 @@
 import React from 'react';
 import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
 import { Table } from 'react-bootstrap';
+import Axios from 'axios';
 
 export class FindContactByIdComponent extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            contactId: 0,
+            firstname: "",
+            lastname: "",
+            address: "",
+            city: "",
+            state: "",
+            zip: "",
+            phone: "",
+            email: "",
+            contact: []
+        };
+    }
+
+    handleChange(event: any) {
+        const value = event.target.value;
+        this.setState({
+            ...this.state,
+            contactid: value
+        });
+    }
+
+    handleSubmit() {
+        const url = `http://localhost:8080/app/contact-book/contact/${this.state.contactid}`;
+        Axios.get(url).then(payload => {
+            this.setState({
+                ...this.state,
+                contact: (
+                    <tr key={this.state.contactid}>
+                        <th>{payload.data.contactid}</th>
+                        <th>{payload.data.firstname}</th>
+                        <th>{payload.data.lastname}</th>
+                        <th>{payload.data.adrress}</th>
+                        <th>{payload.data.city}</th>
+                        <th>{payload.data.state}</th>
+                        <th>{payload.data.zip}</th>
+                        <th>{payload.data.phone}</th>
+                        <th>{payload.data.email}</th>
+                    </tr>
+                )
+            })
+        })
+        
+    alert(`You have retrieved the contact with id of: ${this.state.contactid}`);
+    }
     render() {
         return (
             <div>
-                <div id="margin-herp">
+                <div id="margin-hero">
                     <div id="hero-get-contact-information-by-id-background">
                         <h1>Contact Information: Find Contact By ID Number</h1>
                         <hr></hr>
-                        <ContactTabsComponent />
-                        <div className="get-car-information-by-id-split get-car-information-by-id-left">
-                            <div className="get-car-information-by-id-centered">
-                                <input type="number" placeholder="Enter Contact ID Number" />
+                        <ContactTabsComponent />   
+                                <input type="number" placeholder="Enter Contact ID Number" value={this.state.contactid} onChange={(event: any) => this.handleChange(event)}/>
                                 <br></br><br></br>
-                                <button className="btn-dark">Submit</button>
-                            </div>
-                        </div>
-                        <div className="get-car-information-by-id-split get-car-information-by-id-right">
-                            <div className="get-car-information-by-id-centered">
-                                    <Table striped bordered hover>
+                                <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                                <Table striped bordered hover>
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -34,9 +77,10 @@ export class FindContactByIdComponent extends React.Component<any, any> {
                                                 <th>Email</th>
                                             </tr>
                                             </thead>
-                                    </Table>
-                            </div>
-                        </div>
+                                            <tbody>
+                                                {this.state.contact}
+                                            </tbody>
+                                    </Table>          
                     </div>
                 </div>
             </div>
