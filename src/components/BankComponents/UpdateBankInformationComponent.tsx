@@ -1,6 +1,7 @@
 import React from 'react';
 import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class UpdateBankInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -23,33 +24,33 @@ export class UpdateBankInformationComponent extends React.Component<any, any> {
     }
 
     handleNameChange(event: any) {
-       this.setState({
-           name: event.target.value
-       });
+        this.setState({
+            name: event.target.value
+        });
     }
 
     handleAddressChange(event: any) {
-       this.setState({
-           address: event.target.value
-       });
+        this.setState({
+            address: event.target.value
+        });
     }
 
     handleCityChange(event: any) {
-       this.setState({
-           city: event.target.value
-       });
-   }
+        this.setState({
+            city: event.target.value
+        });
+    }
 
     handleStateChange(event: any) {
-       this.setState({
-           state: event.target.value
-       });
+        this.setState({
+            state: event.target.value
+        });
     }
 
     handleZipChange(event: any) {
-       this.setState({
-           zip: event.target.value
-       });
+        this.setState({
+            zip: event.target.value
+        });
     }
 
     handleSubmit(event: any) {
@@ -63,7 +64,7 @@ export class UpdateBankInformationComponent extends React.Component<any, any> {
             state: this.state.state,
             zip: this.state.zip
         };
-        
+
         const url = `http://localhost:8080/app/banks/bank/${this.state.bankid}`;
         Axios.post(url, bank);
         alert(`Added Car Information: ${this.state.bankid} ${this.state.name}`);
@@ -76,67 +77,36 @@ export class UpdateBankInformationComponent extends React.Component<any, any> {
                     <hr></hr>
                     <BankTabsComponent />
                     <br></br>
-                    <div className="form-row">
-                        <div className="form-group col-md-1 offset-2">
+                    <Container className="update-bank-information-container">
+                        <Form>
                             <label>
                                 Enter Bank ID No:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="number" placeholder="Enter ID" onChange={(event: any) => this.handleBankIdChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="number" className="update-bank-information-input" onChange={(event: any) => this.handleBankIdChange(event)} /><br></br>
                             <label>
                                 Bank Name:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Bank Name" value={this.state.name} onChange={(event: any) => this.handleNameChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="text" className="update-bank-information-input" value={this.state.name} onChange={(event: any) => this.handleNameChange(event)} /><br></br>
                             <label>
                                 Address:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Address" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="text" className="update-bank-information-input" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} /><br></br>
                             <label>
                                 City:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter City" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="text" className="update-bank-information-input" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} /><br></br>
                             <label>
                                 State
-                            </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter State" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="text" className="update-bank-information-input" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} /><br></br>
                             <label>
                                 Zip Code:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Zip" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
-                        </div>
-                    </div>
-                    <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                            </label><br></br>
+                            <input type="text" className="update-bank-information-input" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} /><br></br><br></br>
+                            <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                        </Form>
+                    </Container>
+
                 </div>
             </div>
         )

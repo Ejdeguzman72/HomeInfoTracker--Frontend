@@ -1,6 +1,7 @@
 import React from 'react';
 import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
 import Axios from 'axios';
+import { Container, Form, Button } from 'react-bootstrap';
 
 export class DeleteBankInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -32,12 +33,18 @@ export class DeleteBankInformationComponent extends React.Component<any, any> {
                         <h1>Bank Information: Delete Bank Information</h1>
                         <hr></hr>
                         <BankTabsComponent />
-                        <div className="form-row">
-                            <input type="number" placeholder="Enter ID to be deleted" value={this.state.bankid} onChange={(event:any) => this.handleChange(event)}/>
-                        </div><br></br>
-                        <div className="form-row">
-                            <button className="btn-dark" onClick={(event:any) => this.handleSubmit(event)}>Delete Bank Information</button>
-                        </div>
+                        <br></br>
+                        <Container className="delete-bank-information-container">
+                            <Form>
+                                <label>
+                                    Enter Bank ID to Delete:
+                                </label>
+                                <br></br>
+                                <input type="number" className="delete-bank-information-input" onChange={(event: any) => this.handleChange(event)} />
+                                <br></br><br></br>
+                                <Button variant="dark" size="lg" onClick={(event: any) => this.handleSubmit(event)}>Delete Bank Information</Button>
+                            </Form>
+                        </Container>
                     </div>
                 </div>
             </div>

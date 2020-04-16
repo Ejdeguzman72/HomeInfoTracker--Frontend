@@ -1,6 +1,6 @@
 import React from 'react';
 import { TransactionTabsComponent } from '../TabsComponents/TransactionTabsComponent';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 
 export class GetTransactionByIdComponent extends React.Component<any, any> {
@@ -50,31 +50,29 @@ export class GetTransactionByIdComponent extends React.Component<any, any> {
                     <h1>Transaction Information: Get Transaction By ID</h1>
                     <hr></hr>
                     <TransactionTabsComponent />
-                    <div className="get-transaction-information-by-id-split get-transaction-information-by-id-left">
-                            <div className="get-transaction-information-by-id-centered">
-                                <input type="number" placeholder="Enter Transaction ID Number" value={this.state.transactionid} onChange={(event: any) => this.handleChange(event)}/>
-                                <br></br><br></br>
-                                <button className="btn-dark" onClick={() => this.handlesubmit()}>Submit</button>
-                            </div>
-                        </div>
-                        <div className="get-transaction-information-by-id-split get-transaction-information-by-id-right">
-                            <div className="get-transaction-information-by-id-centered">
-                                    <Table striped bordered hover>
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Amount</th>
-                                                <th>Recipient</th>
-                                                <th>Date</th>
-                                                <th>Type</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {this.state.transaction}
-                                        </tbody>
-                                    </Table>
-                            </div>
-                        </div>
+                    <Container className="get-transaction-by-id-container">
+                        <Form>
+                            <label>Enter Transaction ID Number: </label><br></br>
+                            <input type="number" className="get-transaction-by-id-input" onChange={(event: any) => this.handleChange(event)} />
+                            <br></br><br></br>
+                            <Button variant="dark" size="lg" onClick={() => this.handlesubmit()}>Submit</Button>
+                        </Form>
+                    </Container>
+                    <br></br>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Amount</th>
+                                <th>Recipient</th>
+                                <th>Date</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.transaction}
+                        </tbody>
+                    </Table>
                 </div>
             </div>
         )
