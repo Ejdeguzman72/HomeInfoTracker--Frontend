@@ -104,13 +104,15 @@ export class CreateContactComponent extends React.Component<any, any> {
                                         <label>
                                             First Name:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter First Name" value={this.state.firstname} onChange={(event: any) => this.handleFirstNameChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.firstname} onChange={(event: any) => this.handleFirstNameChange(event)} />
                                     </div>
                                     <div className="form-group col-md-4 offset-3">
                                         <label>
                                             Last Name:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter Last Name" value={this.state.lastname} onChange={(event: any) => this.handleLastNameChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.lastname} onChange={(event: any) => this.handleLastNameChange(event)} />
                                     </div>
                                 </div>
 
@@ -119,13 +121,15 @@ export class CreateContactComponent extends React.Component<any, any> {
                                         <label>
                                             Address:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter Address" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
                                     </div>
                                     <div className="form-group col-md-4 offset-3">
                                         <label>
                                             City:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter City" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
                                     </div>
                                 </div>
                                 <div className="form-row">
@@ -133,13 +137,15 @@ export class CreateContactComponent extends React.Component<any, any> {
                                         <label>
                                             State:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter State" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
                                     </div>
                                     <div className="form-group col-md-4 offset-3">
                                         <label>
                                             Zip Code:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter Zip Code" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
                                     </div>
                                 </div>
                                 <div className="form-row">
@@ -147,20 +153,21 @@ export class CreateContactComponent extends React.Component<any, any> {
                                         <label>
                                             Phone Number:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter Phone" value={this.state.phone} onChange={(event: any) => this.handlePhoneChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.phone} onChange={(event: any) => this.handlePhoneChange(event)} />
                                     </div>
                                     <div className="form-group col-md-4 offset-3">
                                         <label>
                                             Email Address:
                                 </label>
-                                        <input className="create-contact-information-input" type="text" placeholder="Enter Email" value={this.state.email} onChange={(event: any) => this.handleEmailChange(event)} />
+                                <br></br>
+                                        <input className="create-contact-information-input" type="text" value={this.state.email} onChange={(event: any) => this.handleEmailChange(event)} />
                                     </div>
                                     <br></br><br></br>
                                 </div>
                                 <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
                             </Form>
                         </Container>
-
                     </div>
                 </div>
             </div>

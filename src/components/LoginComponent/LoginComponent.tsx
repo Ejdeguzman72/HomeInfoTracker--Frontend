@@ -16,7 +16,6 @@ export default class Login extends React.Component<any, any> {
         this.submit = this.submit.bind(this);
       }
 
-      
 // CHANGE IS BEING CALLED WITHIN THE TWO INPUT FIELDS
 // USERNAME AND PASSPORT
     change(e:any){

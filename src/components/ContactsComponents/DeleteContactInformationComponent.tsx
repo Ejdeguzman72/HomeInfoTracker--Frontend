@@ -2,6 +2,7 @@ import React from 'react';
 import { any } from 'prop-types';
 import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class DeleteContactInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -27,19 +28,19 @@ export class DeleteContactInformationComponent extends React.Component<any, any>
     render() {
         return (
             <div>
-                <div id="margin-herp">
+                <div id="margin-hero">
                     <div id="hero-delete-contact-information-background">
                         <h1>Contact Information: Delete Contact Information</h1>
                         <hr></hr>
                         <ContactTabsComponent />
-                        <div className="form-row">
-                            <div className="centered">
-                                <input type="number" placeholder="Enter ID to be deleted" value={this.state.contactId} onChange={(event:any) => this.handleChange(event)} />
-                            </div>
-                        </div><br></br>
-                        <div className="form-row">
-                            <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Delete Contact Item</button>
-                        </div>
+                        <br></br>
+                        <Container className="delete-contact-information-container">
+                            <Form>
+                                <input type="number" className="delete-contact-information-input" placeholder="Enter ID to be deleted" onChange={(event: any) => this.handleChange(event)} />
+                                <br></br><br></br>
+                                <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Delete Item</button>
+                            </Form>
+                        </Container>
                     </div>
                 </div>
             </div>
