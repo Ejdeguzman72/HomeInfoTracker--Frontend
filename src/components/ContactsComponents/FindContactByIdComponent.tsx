@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 
 export class FindContactByIdComponent extends React.Component<any, any> {
@@ -49,8 +49,8 @@ export class FindContactByIdComponent extends React.Component<any, any> {
                 )
             })
         })
-        
-    alert(`You have retrieved the contact with id of: ${this.state.contactid}`);
+
+        alert(`You have retrieved the contact with id of: ${this.state.contactid}`);
     }
     render() {
         return (
@@ -59,28 +59,34 @@ export class FindContactByIdComponent extends React.Component<any, any> {
                     <div id="hero-get-contact-information-by-id-background">
                         <h1>Contact Information: Find Contact By ID Number</h1>
                         <hr></hr>
-                        <ContactTabsComponent />   
-                                <input type="number" placeholder="Enter Contact ID Number" value={this.state.contactid} onChange={(event: any) => this.handleChange(event)}/>
+                        <ContactTabsComponent />
+                        <br></br>
+                        <Container className="get-contact-info-by-id-container">
+                            <Form>
+                                <input className="get-contact-info-by-id-container-input"type="number" placeholder="Enter Contact ID Number" value={this.state.contactid} onChange={(event: any) => this.handleChange(event)} />
                                 <br></br><br></br>
-                                <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
-                                <Table striped bordered hover>
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>F.Name</th>
-                                                <th>L.Name</th>
-                                                <th>Address</th>
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Zip</th>
-                                                <th>Phone</th>
-                                                <th>Email</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                                {this.state.contact}
-                                            </tbody>
-                                    </Table>          
+                                <Button variant="dark" size="lg" onClick={() => this.handleSubmit()}>Submit</Button>
+                            </Form>
+                        </Container>
+                        <br></br>
+                        <Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>F.Name</th>
+                                    <th>L.Name</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Zip</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.contact}
+                            </tbody>
+                        </Table>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form } from 'react-bootstrap';
 import Axios from 'axios';
 
 export class CreateContactComponent extends React.Component<any, any> {
@@ -20,7 +20,7 @@ export class CreateContactComponent extends React.Component<any, any> {
         };
     }
 
-    handleFirstNameChange(event:any) {
+    handleFirstNameChange(event: any) {
         this.setState({
             firstname: event.target.value
         });
@@ -85,76 +85,82 @@ export class CreateContactComponent extends React.Component<any, any> {
         console.log(contact);
 
         const url = ("http://localhost:8080/app/contact-book/contacts");
-        Axios.post(url, contact );
+        Axios.post(url, contact);
         alert(`Created New Contact: ${this.state.firstname} ${this.state.lastname}`);
     }
     render() {
         return (
             <div>
                 <div id="margin-hero">
-                    <div id="hero-add-a-contact-information-background">
+                    <div id="hero-create-contact-information-background">
                         <h1>Contact Information: Create Contact</h1>
                         <hr></hr>
                         <ContactTabsComponent />
-                        <div className="form-row">
-                            <div className="form-group col-md-4">
-                                <label>
-                                    First Name: 
-                                </label>                   
-                                <input type="text" placeholder="Enter First Name" value={this.state.firstname} onChange={(event: any) => this.handleFirstNameChange(event)} />
-                            </div>
-                            <div className="form-grou[ col-md-4">
-                                <label>
-                                    Last Name:
+                        <br></br>
+                        <Container className="create-contact-information-container">
+                            <Form>
+                                <div className="form-row">
+                                    <div className="form-group col-md-4">
+                                        <label>
+                                            First Name:
                                 </label>
-                                <input type="text" placeholder="Enter Last Name" value={this.state.lastname} onChange={(event: any) => this.handleLastNameChange(event)} />
-                            </div>
-                        </div>
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter First Name" value={this.state.firstname} onChange={(event: any) => this.handleFirstNameChange(event)} />
+                                    </div>
+                                    <div className="form-group col-md-4 offset-3">
+                                        <label>
+                                            Last Name:
+                                </label>
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter Last Name" value={this.state.lastname} onChange={(event: any) => this.handleLastNameChange(event)} />
+                                    </div>
+                                </div>
 
-                        <div className="form-row">
-                            <div className="form-group col-md-4">
-                                <label>
-                                    Address:
+                                <div className="form-row">
+                                    <div className="form-group col-md-4">
+                                        <label>
+                                            Address:
                                 </label>
-                                <input type="text" placeholder="Enter Address" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
-                            </div>
-                            <div className="form-grou[ col-md-4">
-                                <label>
-                                    City:
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter Address" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
+                                    </div>
+                                    <div className="form-group col-md-4 offset-3">
+                                        <label>
+                                            City:
                                 </label>
-                                <input type="text" placeholder="Enter City" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
-                            </div>  
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col-md-4">
-                                <label>
-                                    State:
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter City" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-4">
+                                        <label>
+                                            State:
                                 </label>
-                                <input type="text" placeholder="Enter State" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
-                            </div>
-                            <div className="form-grou[ col-md-4">
-                                <label>
-                                    Zip Code:
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter State" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
+                                    </div>
+                                    <div className="form-group col-md-4 offset-3">
+                                        <label>
+                                            Zip Code:
                                 </label>
-                                <input type="text" placeholder="Enter Zip Code" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
-                            </div>                   
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col-md-4">
-                                <label>
-                                    Phone Number:
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter Zip Code" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-4">
+                                        <label>
+                                            Phone Number:
                                 </label>
-                                <input type="text" placeholder="Enter Phone" value={this.state.phone} onChange={(event: any) => this.handlePhoneChange(event)} />
-                            </div>
-                            <div className="form-grou[ col-md-4">
-                            <label>
-                                Email Address: 
-                            </label>
-                            <input type="text" placeholder="Enter Email" value={this.state.email} onChange={(event: any) => this.handleEmailChange(event)} />                    
-                        </div>
-                        <br></br><br></br>
-                        </div>
-                        <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>                
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter Phone" value={this.state.phone} onChange={(event: any) => this.handlePhoneChange(event)} />
+                                    </div>
+                                    <div className="form-group col-md-4 offset-3">
+                                        <label>
+                                            Email Address:
+                                </label>
+                                        <input className="create-contact-information-input" type="text" placeholder="Enter Email" value={this.state.email} onChange={(event: any) => this.handleEmailChange(event)} />
+                                    </div>
+                                    <br></br><br></br>
+                                </div>
+                                <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                            </Form>
+                        </Container>
+
                     </div>
                 </div>
             </div>
