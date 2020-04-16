@@ -1,5 +1,6 @@
 import React from 'react';
 import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
+import { Container } from 'react-bootstrap';
 
 export class BankInformationComponent extends React.Component<any, any> {
     render() {
@@ -10,17 +11,12 @@ export class BankInformationComponent extends React.Component<any, any> {
                     <hr></hr>
                     <BankTabsComponent />
                     <br></br>
-                    <div id="transaction-information-container">
-                        <form>
-                            <div className="form-row">
-                                <div className="form-group col-md-12 offset-6">
-                                    <p id="transaction-information-p-border">Car information can be viewed here regarding driver, 
-                                    location, mileage, manufacturer, and model
-                                    </p>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <Container id="bank-information-container">
+                        <p>Bank Information consists of name, address, city, and state of branch.
+                            Users are able to0 retrieve bank information, enter new bank information,
+                            update bank information and delete bank information. 
+                        </p>
+                    </Container>
                 </div>
             </div>
         )

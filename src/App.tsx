@@ -33,7 +33,6 @@ import { UpdateCarRecordInformationComponent } from './components/CarRecordsComp
 import { DeleteCarRecordInformation } from './components/CarRecordsComponents/DeleteCarRecordInformationComponent';
 import { CardInformationComponent } from './components/CardComponents/CardInformationComponent';
 import { ToDoListComponent } from './components/FunApplicationComponents/ToDoListComponent';
-import Provider from 'react-redux';
 import { FunApplicationComponent } from './components/FunApplicationComponents/FunApplicationComponent';
 import { RepairShopInformationComponent } from './components/RepairShopComponents/RepairShopInformatonComponent';
 import { GetAllRepairShops } from './components/RepairShopComponents/GetAllRepairShops';

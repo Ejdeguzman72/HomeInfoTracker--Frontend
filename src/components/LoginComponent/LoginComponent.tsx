@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router';
+import { Button } from 'react-bootstrap';
 
 export default class Login extends React.Component<any, any> {
     constructor(props: any) {
@@ -36,28 +37,31 @@ export default class Login extends React.Component<any, any> {
           this.setState({
             shouldRedirect: true
           });
-          // window.location.reload();
+          window.location.reload();
           console.log(res.data.token);
           alert(`${this.state.username} has logged in!`);
       }).catch(() => {
           alert("Incorrect User Name Or Password");
-      })
-      
+      })    
   }
 
 render() {
     return(
-    <div className="Main_login_div">
+    <div className="login-container">
       {this.state.shouldRedirect ? <Redirect to = "/home"/>: null}
-      <label htmlFor="password">Username</label>
-      <input type="text" name="username" placeholder="username" onChange={e => this.change(e)} value={this.state.username}/>
-      <br></br>
-      <label htmlFor="password">Password</label>
-      <input type="password" name="password" placeholder="password" onChange={e => this.change(e)} value={this.state.password}/>
-      <br></br>
-      <button type="button" className="btn-dark" onClick ={e => this.submit(e)}>
+      <label htmlFor="password" className="login-input-label">Username</label>
+      <input type="text" name="username" className="login-input" placeholder="username" onChange={e => this.change(e)} value={this.state.username}/>
+      <br></br><br></br>
+      <label htmlFor="password" className="login-input-label">Password</label>
+      <input type="password" name="password" className="login-input" placeholder="password" onChange={e => this.change(e)} value={this.state.password}/>
+      <br></br><br></br>
+      <Button type="button" size="lg" className="btn-dark" onClick ={(e: any) => this.submit(e)}>
         Login
-      </button>
+      </Button>
+      <br></br><br></br>
+      <Button type="button" size="lg" className="btn-dark">
+        Register
+      </Button>
     </div>
     )
   }
