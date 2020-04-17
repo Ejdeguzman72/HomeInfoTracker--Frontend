@@ -33,6 +33,7 @@ export class DeleteBankInformationComponent extends React.Component<any, any> {
                         <h1>Bank Information: Delete Bank Information</h1>
                         <hr></hr>
                         <BankTabsComponent />
+<<<<<<< HEAD
                         <Container className="delete-bank-information-container">
                             <Form>
                                 <label>
@@ -42,6 +43,18 @@ export class DeleteBankInformationComponent extends React.Component<any, any> {
                                 <input type="number" placeholder="Enter ID to be deleted" value={this.state.bankid} onChange={(event: any) => this.handleChange(event)} />
                                 <br></br><br></br>
                                 <Button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</Button>
+=======
+                        <br></br>
+                        <Container className="delete-bank-information-container">
+                            <Form>
+                                <label>
+                                    Enter Bank ID to Delete:
+                                </label>
+                                <br></br>
+                                <input type="number" className="delete-bank-information-input" onChange={(event: any) => this.handleChange(event)} />
+                                <br></br><br></br>
+                                <Button variant="dark" size="lg" onClick={(event: any) => this.handleSubmit(event)}>Delete Bank Information</Button>
+>>>>>>> 4bde7c2f2c34fc70706c98d76007d75ee7da4b16
                             </Form>
                         </Container>
                     </div>
