@@ -1,6 +1,7 @@
 import React from 'react';
 import { CarTabsComponent } from '../TabsComponents/CarTabsComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class UpdateCarInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -17,7 +18,7 @@ export class UpdateCarInformationComponent extends React.Component<any, any> {
         };
     }
 
-    handleCarIdChange(event:any) {
+    handleCarIdChange(event: any) {
         this.setState({
             carid: event.target.value
         });
@@ -29,7 +30,7 @@ export class UpdateCarInformationComponent extends React.Component<any, any> {
         });
     }
 
-    handleModelChange(event:any) {
+    handleModelChange(event: any) {
         this.setState({
             model: event.target.value
         });
@@ -82,88 +83,92 @@ export class UpdateCarInformationComponent extends React.Component<any, any> {
             <div>
                 <div id="margin-hero">
                     <div id="hero-update-car-information-background">
-                    <h1>Car Information: Update Car Information</h1>
-                    <hr></hr>
-                    <CarTabsComponent />
-                    <br></br>
-                    <div className="form-row">
-                        <div className="form-group col-md-1 offset-1">
-                            <label>
-                                Car ID:
+                        <h1>Car Information: Update Car Information</h1>
+                        <hr></hr>
+                        <CarTabsComponent />
+                        <br></br>
+                        <Container className="update-car-information-container">
+                            <Form>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1 offset-1">
+                                        <label>
+                                            Car ID:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="number" placeholder="Enter ID No:" onChange={(event:any) => this.handleCarIdChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Make:
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <input type="number" onChange={(event: any) => this.handleCarIdChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1">
+                                        <label>
+                                            Make:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Make" value={this.state.make} onChange={(event: any) => this.handleMakeChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Model:
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <input type="text" value={this.state.make} onChange={(event: any) => this.handleMakeChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1">
+                                        <label>
+                                            Model:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Model" value={this.state.model} onChange={(event: any) => this.handleModelChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Year:
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <input type="text" value={this.state.model} onChange={(event: any) => this.handleModelChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1">
+                                        <label>
+                                            Year:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Year" value={this.state.year} onChange={(event: any) => this.handleYearChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Capacity:
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <input type="text" value={this.state.year} onChange={(event: any) => this.handleYearChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1">
+                                        <label>
+                                            Capacity:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="number" placeholder="Enter Capacity" value={this.state.capacity} onChange={(event: any) => this.handleCapacityChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Transmission:
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <input type="number" value={this.state.capacity} onChange={(event: any) => this.handleCapacityChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1">
+                                        <label>
+                                            Transmission:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Transmission" value={this.state.transmission} onChange={(event: any) => this.handleTransmissionChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                AC
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <input type="text" value={this.state.transmission} onChange={(event: any) => this.handleTransmissionChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1">
+                                        <label>
+                                            AC
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="AC" value={this.state.ac} onChange={(event: any) => this.handleACChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1 offset-1">
-                            <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
-                        </div>
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <input type="text" value={this.state.ac} onChange={(event: any) => this.handleACChange(event)} />
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-md-1 offset-1">
+                                        <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                                    </div>
+                                </div>
+                            </Form>
+                        </Container>
                     </div>
                 </div>
             </div>
-        </div>
         )
     }
 }

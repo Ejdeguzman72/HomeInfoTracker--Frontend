@@ -1,6 +1,6 @@
 import React from 'react';
 import { CarTabsComponent } from '../TabsComponents/CarTabsComponent';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 
 export class GetCarByIDComponent extends React.Component<any, any> {
@@ -56,33 +56,40 @@ export class GetCarByIDComponent extends React.Component<any, any> {
                         <h1>Car Information: Get Car Information By ID</h1>
                         <hr></hr>
                         <CarTabsComponent />
-                        
-                            
-                                <input type="number" placeholder="Enter Car ID Number" value={this.state.carid} onChange={(event: any) => this.handleChange(event)}/>
+                        <br></br>
+                        <Container className="get-car-information-by-id-container">
+                            <Form>
+                                <label>
+                                    Enter Car ID No:
+                                </label><br></br>
+                                <input type="number" className="get-car-information-by-id-input" onChange={(event: any) => this.handleChange(event)} />
                                 <br></br><br></br>
-                                <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                                <Button variant="dark" size="lg" onClick={() => this.handleSubmit()}>Submit</Button>
                                 <br></br>
-                                    <Table striped bordered hover>
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Make</th>
-                                                <th>Model</th>
-                                                <th>Year</th>
-                                                <th>Capacity</th>
-                                                <th>Transmission</th>
-                                                <th>AC</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                                {this.state.car}
-                                            </tbody>
-                                    </Table>
-                            </div>
-                        </div>
-                       
-                            </div>
-                       
+                            </Form>
+                        </Container>
+                        <br></br>
+                        <Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Make</th>
+                                    <th>Model</th>
+                                    <th>Year</th>
+                                    <th>Capacity</th>
+                                    <th>Transmission</th>
+                                    <th>AC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.car}
+                            </tbody>
+                        </Table>
+                    </div>
+                </div>
+
+            </div>
+
         )
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 
 export class GetBankByIDComponent extends React.Component<any, any> {
@@ -54,10 +54,18 @@ export class GetBankByIDComponent extends React.Component<any, any> {
                         <h1>Bank Information: Get Bank Information By ID</h1>
                         <hr></hr>
                         <BankTabsComponent />
-                                <input type="number" placeholder="Enter Bank ID Number" value={this.state.bankid} onChange={(event: any) => this.handleChange(event)}/>
+                        <Container className="get-bank-information-by-id-container">
+                            <Form>
+                                <label>
+                                    Enter Bank ID No:
+                                </label>
+                                <input type="number" className="get-bank-information-by-id-input" placeholder="Enter Bank ID Number" value={this.state.bankid} onChange={(event: any) => this.handleChange(event)}/>
                                 <br></br><br></br>
-                                <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                                <Button variant="dark" onClick={() => this.handleSubmit()}>Submit</Button>
                                 <br></br>
+                            </Form>
+                        </Container>
+                        <br></br>
                                     <Table striped bordered hover>
                                         <thead>
                                             <tr>

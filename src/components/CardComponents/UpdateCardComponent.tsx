@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardTabsComponent } from '../TabsComponents/CardTabsComponent';
 import Axios from 'axios';
+import { Container, Form, Button } from 'react-bootstrap';
 
 
 export class UpdateCardComponent extends React.Component<any, any> {
@@ -66,88 +67,52 @@ export class UpdateCardComponent extends React.Component<any, any> {
             securityCode: this.state.securityCode
         };
         const url = (`http://localhost:8080/app/cards/card/${this.state.cardid}`);
-        Axios.put(url, card );
+        Axios.put(url, card);
         alert(`Updated Card ID: ${this.state.cardid}`);
         console.log(card);
     }
     render() {
-        return(
+        return (
             <div>
-                <div id="hero-add-car-record-information-background">
+                <div id="hero-add-card-information-background">
                     <h1>Card Information: Update Card Information</h1>
                     <hr></hr>
                     <CardTabsComponent />
                     <br></br>
-                    <div className="form-row">
-                        <div className="form-group col-md-1 offset-2">
+                    <Container className="update-card-information-container">
+                        <Form>
                             <label>
                                 Card ID:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-2">
-                            <input type="number" placeholder="Card ID No" onChange={(event:any) => this.handleCardId(event)} />
-                        </div>
-                    </div>
-                    <br></br>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="number" className="update-card-information-input"onChange={(event: any) => this.handleCardId(event)} /><br></br>
+                            <br></br>
                             <label>
                                 Card Type ID:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-2">
-                            <input type="number" placeholder="Card Type ID" onChange={(event:any) => this.handleCardTypeId(event)} />
-                        </div>
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="number" className="update-card-information-input" onChange={(event: any) => this.handleCardTypeId(event)} /><br></br>
                             <label>
                                 Bank ID:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-2">
-                            <input type="number" placeholder="Bank ID" onChange={(event:any) => this.handleBankId(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="number" className="update-card-information-input" onChange={(event: any) => this.handleBankId(event)} /><br></br>
                             <label>
                                 Cardholder Name:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-2">
-                            <input type="text" placeholder="Name" value={this.state.name} onChange={(event:any) => this.handleName(event)} />
-                        </div>
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="text" className="update-card-information-input" value={this.state.name} onChange={(event: any) => this.handleName(event)} /><br></br>
                             <label>
                                 Card No:
-                            </label>
-                        </div> 
-                        <div className="form-group col-md-2">
-                            <input type="text" placeholder="Card Number" value={this.state.cardNumber} onChange={(event:any) => this.handleCardNumber(event)}/>
-                        </div>   
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="text" className="update-card-information-input" value={this.state.cardNumber} onChange={(event: any) => this.handleCardNumber(event)} /><br></br>
                             <label>
                                 Expiration Date (MM-DD-YYYY)
-                            </label>
-                        </div>
-                        <div className="form-group col-md-2">
-                            <input type="text" placeholder="Expiration Date" value={this.state.expirationDate} onChange={(event:any) => this.handleExpirationDate(event)} />
-                        </div>
-                        <div className="form-group col-md-1">
+                            </label><br></br>
+                            <input type="text" className="update-card-information-input" value={this.state.expirationDate} onChange={(event: any) => this.handleExpirationDate(event)} /><br></br>
                             <label>
                                 Security Code:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-2">
-                            <input type="text" placeholder="Security Code" value={this.state.securityCode} onChange={(event:any) => this.handleSecurityCode(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-4 offset-3">
-                            <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
-                        </div>
-                    </div>
+                            </label><br></br>
+                            <input type="text" className="update-card-information-input" value={this.state.securityCode} onChange={(event: any) => this.handleSecurityCode(event)} /><br></br>
+                            <Button variant="dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</Button><br></br>
+                        </Form>
+                    </Container>
                 </div>
             </div>
         )

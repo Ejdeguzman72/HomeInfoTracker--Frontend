@@ -1,6 +1,7 @@
 import React from 'react';
 import { CarTabsComponent } from '../TabsComponents/CarTabsComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class DeleteCarInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -32,12 +33,17 @@ export class DeleteCarInformationComponent extends React.Component<any, any> {
                         <h1>Car Information: Delete Car Information</h1>
                         <hr></hr>
                         <CarTabsComponent />
-                        <div className="form-row">
-                            <input type="number" placeholder="Enter ID to be deleted" value={this.state.carid} onChange={(event:any) => this.handleChange(event)}/>
-                        </div><br></br>
-                        <div className="form-row">
-                            <button className="btn-dark" onClick={(event:any) => this.handleSubmit(event)}>Delete Car Information</button>
-                        </div>
+                        <br></br>
+                        <Container className="delete-car-information-container">
+                            <Form>
+                                <label>
+                                    Enter Car ID No:
+                                </label><br></br>
+                                <input type="number" className="delete-car-information-input" onChange={(event: any) => this.handleChange(event)} />
+                                <br></br><br></br>
+                                <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                            </Form>
+                        </Container>
                     </div>
                 </div>
             </div>

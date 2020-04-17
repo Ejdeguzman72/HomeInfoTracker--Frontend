@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardTabsComponent } from '../TabsComponents/CardTabsComponent';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form } from 'react-bootstrap';
 import Axios from 'axios';
 
 export class GetCardInformationByIdComponent extends React.Component<any, any> {
@@ -48,34 +48,45 @@ export class GetCardInformationByIdComponent extends React.Component<any, any> {
             })
         })
     }
-    
+
     render() {
-        return(
+        return (
             <div>
                 <div id="hero-get-contact-information-by-id-background">
-                        <h1>Card Information: Find Card By ID Number</h1>
-                        <hr></hr>
-                        <CardTabsComponent />   
-                                <input type="number" placeholder="Enter Card ID Number" value={this.state.cardid} onChange={(event: any) => this.handleChange(event)}/>
-                                <br></br><br></br>
-                                <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
-                                <Table striped bordered hover>
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Card Type</th>
-                                                <th>Bank </th>
-                                                <th>Name</th>
-                                                <th>Card Number</th>
-                                                <th>Expiration Date</th>
-                                                <th>Security Code</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                                {this.state.card}
-                                            </tbody>
-                                    </Table>          
-                    </div>
+                    <h1>Card Information: Find Card By ID Number</h1>
+                    <hr></hr>
+                    <CardTabsComponent />
+                    <br></br>
+                    <Container className="get-card-information-by-id-container">
+                        <Form>
+                            <label>
+                                Enter Card ID Number:  
+                            </label><br></br>
+                            <input type="number" className="get-card-informaton-by-id-input" onChange={(event: any) => this.handleChange(event)} />
+                            <br></br><br></br>
+                            <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                        </Form>
+                    </Container>
+                    <br></br>
+                            <Table striped bordered hover>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Card Type</th>
+                                        <th>Bank </th>
+                                        <th>Name</th>
+                                        <th>Card Number</th>
+                                        <th>Expiration Date</th>
+                                        <th>Security Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.state.card}
+                                </tbody>
+                                <br></br>
+                            </Table>
+                            <br></br><br></br>
+                </div>
             </div>
         )
     }

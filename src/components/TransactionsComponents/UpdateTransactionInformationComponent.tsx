@@ -1,6 +1,7 @@
 import React from 'react';
 import { TransactionTabsComponent } from '../TabsComponents/TransactionTabsComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class UpdateTransactionInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -56,7 +57,7 @@ export class UpdateTransactionInformationComponent extends React.Component<any, 
             transactionDate: this.state.transactionDate,
             transactionType: this.state.transactionType
         };
-        Axios.put(`http://localhost:8080/app/transactions/transaction/${this.state.transactionId}`, transaction );
+        Axios.put(`http://localhost:8080/app/transactions/transaction/${this.state.transactionId}`, transaction);
         alert(`You have added transaction of amount: ${this.state.amount}`);
         console.log(transaction);
     }
@@ -67,61 +68,49 @@ export class UpdateTransactionInformationComponent extends React.Component<any, 
                     <h1>Transaction Information: Update Transaction Information</h1>
                     <hr></hr>
                     <TransactionTabsComponent />
-                        <div className="form-row">
-                            <div className="form-group col-md-1 offset-4">
-                                <label>
-                                    Enter Transaction ID: 
+                    <Container className="update-transaction-information-container">
+                        <Form>
+                            <label>
+                                Enter Transaction ID:
                                 </label>
-                            </div>
-                            <div className="form-group col-md-3">
-                                <input type="number" placeholder="Enter Transation ID" onChange={(event: any) => this.handleTransactionIdChange(event)} />
-                            </div>
-                        </div>
-                        <br></br>
-                        <div className="form-row">
-                            <div className="form-group col-md-1">
-                                <label>
-                                    Enter Amount ($0.00): 
+                            <br></br>
+                            <input type="number" className="update-transaction-information-input" onChange={(event: any) => this.handleTransactionIdChange(event)} />
+
+                            <br></br>
+
+                            <label>
+                                Enter Amount ($0.00):
                                 </label>
-                            </div>
-                            <div className="form-group col-md-1">
-                                <input type="number" placeholder="Enter Amount" onChange={(event: any) => this.handleAmountChange(event)} />
-                            </div>
-                        </div>
-                        <br></br>
-                        <div className="form-row">
-                            <div className="form-group col-md-1">
-                                <label>
-                                    Transaction Recipient:
+                                <br></br>
+                            <input type="number" className="update-transaction-information-input" onChange={(event: any) => this.handleAmountChange(event)} />
+
+                            <br></br>
+
+                            <label>
+                                Transaction Recipient:
                                 </label>
-                            </div>
-                            <div className="form-group col-md-2">
-                                <input type="text" placeholder="Enter Recipient" value={this.state.recipient} onChange={(event: any) => this.handleRecipientChange(event)} />
-                            </div>
-                        </div>
-                        <br></br>
-                        <div className="form-row">
-                            <div className="form-group col-md-1">
-                                <label>
-                                    Transaction Date (MM-DD-YYYY): 
+                                <br></br>
+                            <input type="text" className="update-transaction-information-input" value={this.state.recipient} onChange={(event: any) => this.handleRecipientChange(event)} />
+
+                            <br></br>
+
+                            <label>
+                                Transaction Date (MM-DD-YYYY):
                                 </label>
-                            </div>
-                            <div className="form-group col-md-3">
-                                <input type="text" placeholder="Enter Transaction Date" value={this.state.transactionDate} onChange={(event: any) => this.handleDateChange(event) }/>
-                            </div>
-                        </div>
-                        <br></br>
-                        <div className="form-row">
-                            <div className="form-group col-md-1">
-                                <label>
-                                    Transaction Type:
+                                <br></br>
+                            <input type="text" className="update-transaction-information-input" value={this.state.transactionDate} onChange={(event: any) => this.handleDateChange(event)} />
+
+                            <br></br>
+
+                            <label>
+                                Transaction Type:
                                 </label>
-                            </div>
-                            <div className="form-group col-md-3">
-                                <input type="text" placeholder="Enter Transasction Type" value={this.state.transactionType} onChange={(event: any) => this.handleTransactionType(event)} />
-                            </div>
-                        </div><br></br>
+                                <br></br>
+                            <input type="text" className="update-transaction-information-input" value={this.state.transactionType} onChange={(event: any) => this.handleTransactionType(event)} />
+                            <br></br><br></br>
                             <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                        </Form>
+                    </Container>
                 </div>
             </div>
         )

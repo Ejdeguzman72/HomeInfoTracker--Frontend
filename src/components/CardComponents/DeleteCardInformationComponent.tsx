@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardTabsComponent } from '../TabsComponents/CardTabsComponent';
 import Axios from 'axios';
+import { Container, Form, Button } from 'react-bootstrap';
 
 export class DeleteCardInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -28,16 +29,21 @@ export class DeleteCardInformationComponent extends React.Component<any, any> {
         return (
             <div>
                 <div id="margin-hero">
-                    <div id="hero-delete-car-information-background">
-                        <h1>Car Information: Delete Car Information</h1>
+                    <div id="hero-delete-card-information-background">
+                        <h1>Card Information: Delete Card Information</h1>
                         <hr></hr>
                         <CardTabsComponent />
-                        <div className="form-row">
-                            <input type="number" placeholder="Enter ID to be deleted" value={this.state.cardid} onChange={(event:any) => this.handleChange(event)}/>
-                        </div><br></br>
-                        <div className="form-row">
-                            <button className="btn-dark" onClick={(event:any) => this.handleSubmit(event)}>Delete Car Information</button>
-                        </div>
+                        <br></br>
+                        <Container className="delete-card-information-container">
+                            <Form>
+                                <label>
+                                    Enter Card ID Number:
+                                </label><br></br>
+                                <input type="number" className="delete-card-information-input" onChange={(event: any) => this.handleChange(event)} />
+                                <br></br><br></br>
+                                <Button variant="dark" className="delete-card-information-input" onClick={(event: any) => this.handleSubmit(event)}>Submit</Button>
+                            </Form>
+                        </Container>
                     </div>
                 </div>
             </div>
