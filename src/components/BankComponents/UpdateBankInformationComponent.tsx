@@ -81,12 +81,8 @@ export class UpdateBankInformationComponent extends React.Component<any, any> {
                         <Form>
                             <label>
                                 Enter Bank ID No:
-<<<<<<< HEAD
                             </label>
                             <br></br>
-=======
-                            </label><br></br>
->>>>>>> 4bde7c2f2c34fc70706c98d76007d75ee7da4b16
                             <input type="number" className="update-bank-information-input" onChange={(event: any) => this.handleBankIdChange(event)} /><br></br>
                             <label>
                                 Bank Name:
@@ -111,10 +107,6 @@ export class UpdateBankInformationComponent extends React.Component<any, any> {
                             <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
                         </Form>
                     </Container>
-<<<<<<< HEAD
-=======
-
->>>>>>> 4bde7c2f2c34fc70706c98d76007d75ee7da4b16
                 </div>
             </div>
         )

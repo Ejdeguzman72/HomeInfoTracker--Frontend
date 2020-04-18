@@ -54,7 +54,6 @@ export class GetBankByIDComponent extends React.Component<any, any> {
                         <h1>Bank Information: Get Bank Information By ID</h1>
                         <hr></hr>
                         <BankTabsComponent />
-<<<<<<< HEAD
                         <Container className="get-bank-information-by-id-container">
                             <Form>
                                 <label>
@@ -63,14 +62,6 @@ export class GetBankByIDComponent extends React.Component<any, any> {
                                 <input type="number" className="get-bank-information-by-id-input" placeholder="Enter Bank ID Number" value={this.state.bankid} onChange={(event: any) => this.handleChange(event)}/>
                                 <br></br><br></br>
                                 <Button variant="dark" onClick={() => this.handleSubmit()}>Submit</Button>
-=======
-                        <br></br>
-                        <Container className="get-bank-information-by-id-container">
-                            <Form>
-                                <input type="number" className="get-bank-information-by-id-input" placeholder="Enter Bank ID Number" onChange={(event: any) => this.handleChange(event)}/>
-                                <br></br><br></br>
-                                <Button size="lg" variant="dark" onClick={() => this.handleSubmit()}>Submit</Button>
->>>>>>> 4bde7c2f2c34fc70706c98d76007d75ee7da4b16
                                 <br></br>
                             </Form>
                         </Container>
