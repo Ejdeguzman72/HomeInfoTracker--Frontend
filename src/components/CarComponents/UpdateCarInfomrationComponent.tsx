@@ -89,81 +89,49 @@ export class UpdateCarInformationComponent extends React.Component<any, any> {
                         <br></br>
                         <Container className="update-car-information-container">
                             <Form>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1 offset-1">
-                                        <label>
-                                            Car ID:
+
+                                <label>
+                                    Car ID:
                             </label>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <input type="number" onChange={(event: any) => this.handleCarIdChange(event)} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1">
-                                        <label>
-                                            Make:
+                            <br></br>
+                                <input type="number" className="update-car-information-center-input" onChange={(event: any) => this.handleCarIdChange(event)} />
+                                <br></br>
+                                <label id="left-label">
+                                    Make:
                             </label>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <input type="text" value={this.state.make} onChange={(event: any) => this.handleMakeChange(event)} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1">
-                                        <label>
-                                            Model:
+                                <input type="text" className="update-car-information-left-input" value={this.state.make} onChange={(event: any) => this.handleMakeChange(event)} />
+                                <label>
+                                    Model:
                             </label>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <input type="text" value={this.state.model} onChange={(event: any) => this.handleModelChange(event)} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1">
-                                        <label>
-                                            Year:
+                                <input type="text" className="update-car-information-right-input" value={this.state.model} onChange={(event: any) => this.handleModelChange(event)} />
+                                <br></br>
+
+                                <label>
+                                    Year:
                             </label>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <input type="text" value={this.state.year} onChange={(event: any) => this.handleYearChange(event)} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1">
-                                        <label>
-                                            Capacity:
+                            <br></br>
+                                <input type="text" className="update-car-information-input" value={this.state.year} onChange={(event: any) => this.handleYearChange(event)} />
+                                <br></br>
+                                <label>
+                                    Capacity:
                             </label>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <input type="number" value={this.state.capacity} onChange={(event: any) => this.handleCapacityChange(event)} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1">
-                                        <label>
-                                            Transmission:
+                            <br></br>
+                                <input type="number" className="update-car-information-input" value={this.state.capacity} onChange={(event: any) => this.handleCapacityChange(event)} />
+                                <br></br>
+                                <label>
+                                    Transmission:
                             </label>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <input type="text" value={this.state.transmission} onChange={(event: any) => this.handleTransmissionChange(event)} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1">
-                                        <label>
-                                            AC
+                            <br></br>
+                                <input type="text" value={this.state.transmission} className="update-car-information-input" onChange={(event: any) => this.handleTransmissionChange(event)} />
+                                <br></br>
+                                <label>
+                                    AC
                             </label>
-                                    </div>
-                                    <div className="form-group col-md-3">
-                                        <input type="text" value={this.state.ac} onChange={(event: any) => this.handleACChange(event)} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-1 offset-1">
-                                        <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
-                                    </div>
-                                </div>
+                            <br></br>
+                                <input type="text" className="update-car-information-input"value={this.state.ac} onChange={(event: any) => this.handleACChange(event)} />
+                                <br></br><br></br>
+                                <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+
                             </Form>
                         </Container>
                     </div>
