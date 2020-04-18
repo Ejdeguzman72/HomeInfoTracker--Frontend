@@ -2,7 +2,7 @@ import React from 'react';
 import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
 import { thisExpression } from '@babel/types';
 import Axios from 'axios';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form } from 'react-bootstrap';
 import { MedicalRecordsTabsComponent } from '../TabsComponents/MedicalRecordsTabsComponent';
 
 export class GetMedicalRecordByIdComponent extends React.Component<any, any> {
@@ -54,9 +54,17 @@ export class GetMedicalRecordByIdComponent extends React.Component<any, any> {
                     <h1>Medical Record Information: Get Medical Record By ID Number</h1>
                     <hr></hr>
                     <MedicalRecordsTabsComponent />
-                    <input type="number" placeholder="Enter Medical Record ID Number" value={this.state.medicalRecordId} onChange={(event: any) => this.handleChange(event)}/>
-                    <br></br><br></br>
-                    <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                    <Container className="get-medical-record-information-by-id-container">
+                        <Form>
+                            <label>
+                                Enter Medical Record ID:
+                            </label><br></br>
+                            <input type="number" className="medical-record-input" onChange={(event: any) => this.handleChange(event)}/>
+                            <br></br><br></br>
+                            <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                        </Form>
+                    </Container>
+                    <br></br>
                     <Table striped bordered hover>
                         <thead>
                             <tr>

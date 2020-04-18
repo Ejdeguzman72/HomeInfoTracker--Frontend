@@ -1,6 +1,6 @@
 import React from 'react';
-import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
 import { DoctorOfficeTabsComponent } from '../TabsComponents/DoctorOfficeTabsComponent';
+import { Container } from 'react-bootstrap';
 
 export class DoctorOfficeInfomrationComponent extends React.Component<any, any> {
     render() {
@@ -11,7 +11,7 @@ export class DoctorOfficeInfomrationComponent extends React.Component<any, any> 
                     <hr></hr>
                     <DoctorOfficeTabsComponent />
                     <br></br>
-                    <div id="medical-record-info-container">
+                    <Container className="doctor-office-info-container">
                         <p>The following pertains to doctor office information.
                         This consists of name of doctor, office type, location,
                         name of doctor that works here, and the type of doctor office.
@@ -19,7 +19,7 @@ export class DoctorOfficeInfomrationComponent extends React.Component<any, any> 
                         are able to retrieve doctor office information, enter new office information,
                         update and delete office information.
                         </p>
-                    </div>
+                    </Container>
                 </div>
             </div>
         )

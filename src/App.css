@@ -1324,33 +1324,24 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-.get-repair-shop-information-by-id-split {
-  /* height: 100%; */
+.get-repair-shop-by-id-container {
+  margin: auto;
+  padding: 20px;
   width: 50%;
-  position: fixed;
-  z-index: 1;
-  /* margin: auto; */
-  /* overflow-x: hidden;
-  padding-top: 20px; */
+  height: 80vh;
+  text-align: center;
+  font-size: 40px;
+  font-family: fantasy;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px #888888;
+  background-color: lightyellow;
 }
-  
-.get-repair-shop-information-by-id-left {
-  left: 0;
-  font-size: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-  
-.get-repair-shop-information-by-id-right {
-  right: 0;
-  font-size: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-}
-  
-.get-repair-shop-information-by-id-centered {
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-50%, 20%);
+
+.get-repair-shop-by-id-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: lightyellow;
   text-align: center;
 }
 
@@ -1369,6 +1360,27 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.add-repair-shop-container {
+  margin: auto;
+  padding: 10px;
+  width: 50%;
+  height: 85vh;
+  text-align: center;
+  font-size: 40px;
+  font-family: fantasy;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px #888888;
+  background-color: lightyellow;
+}
+
+.add-repair-shop-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: lightyellow;
+  text-align: center;
+}
+
 #hero-update-repair-shop-information-background {
   background-image: url('./assets/page-background.jpg');
   background-size: cover;
@@ -1382,6 +1394,27 @@
   /* position: relative; */
   opacity: 0.9;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.update-repair-shop-container {
+  margin: auto;
+  padding: 10px;
+  width: 50%;
+  height: 85vh;
+  text-align: center;
+  font-size: 30px;
+  font-family: fantasy;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px #888888;
+  background-color: lightyellow;
+}
+
+.update-repair-shop-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: lightyellow;
+  text-align: center;
 }
 
 #hero-delete-repair-shop-information-background {
@@ -1399,6 +1432,28 @@
   opacity: 0.9;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.delete-repair-shop-container {
+  margin: auto;
+  padding: 10px;
+  width: 50%;
+  height: 85vh;
+  text-align: center;
+  font-size: 30px;
+  font-family: fantasy;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px #888888;
+  background-color: lightyellow;
+}
+
+.delete-repair-shop-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: lightyellow;
+  text-align: center;
+}
+
 /* ---------------------------------------------------------------------------------------*/
 
 /* Medical - Medical Record Info CSS----------------------------------------------------------------------------------------*/
@@ -1428,25 +1483,67 @@
   background-color: lightyellow;
   font-size: 45px;
   font-family: fantasy;
-  height: 70vh;
+  height: 50vh;
   width: 50%;
+  text-align: center;
+}
+
+.get-medical-record-information-by-id-container {
+  margin: auto;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px #888888;
+  background-color: lightyellow;
+  font-size: 30px;
+  font-family: fantasy;
+  height: 50vh;
+  width: 50%;
+  text-align: center;
+}
+
+.add-medical-record-container {
+  margin: auto;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px #888888;
+  background-color: lightyellow;
+  font-size: 30px;
+  font-family: fantasy;
+  height: 50vh;
+  width: 50%;
+  text-align: center;
+}
+
+.medical-record-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: lightyellow;
   text-align: center;
 }
 
 /* Medical - Doctor Office Info CSS----------------------------------------------------------------------------------------*/
 
-#doctor-office-info-container {
+.doctor-office-info-container {
   margin: auto;
   padding: 20px;
   border-color: black;
   border-style: solid;
   background-color: lightyellow;
-  font-size: 40px;
+  font-size: 30px;
   font-family: fantasy;
   box-shadow: 5px 10px 18px #888888;
   font-family: fantasy;
-  height: 70vh;
+  height: 50vh;
   width: 50%;
+  text-align: center;
+}
+
+.doctor-office-info-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: lightyellow;
   text-align: center;
 }
 
@@ -1464,6 +1561,130 @@
   /* position: relative; */
   opacity: 0.9;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#hero-get-doctor-office-information-by-id-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  /* font-size: 20px; */
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.get-doctor-office-information-by-id-container {
+  margin: auto;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  background-color: lightyellow;
+  font-size: 40px;
+  font-family: fantasy;
+  box-shadow: 5px 10px 18px #888888;
+  font-family: fantasy;
+  height: 70vh;
+  width: 50%;
+  text-align: center;
+}
+
+#hero-add-doctor-office-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  /* font-size: 20px; */
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.add-doctor-office-information-container {
+  margin: auto;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  background-color: lightyellow;
+  font-size: 40px;
+  font-family: fantasy;
+  box-shadow: 5px 10px 18px #888888;
+  font-family: fantasy;
+  height: 70vh;
+  width: 50%;
+  text-align: center;
+}
+
+#hero-update-doctor-office-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  /* font-size: 20px; */
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.update-doctor-office-information-container {
+  margin: auto;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  background-color: lightyellow;
+  font-size: 40px;
+  font-family: fantasy;
+  box-shadow: 5px 10px 18px #888888;
+  font-family: fantasy;
+  height: 70vh;
+  width: 50%;
+  text-align: center;
+}
+
+#hero-delete-doctor-office-information-background {
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  width: 100%;
+  /* font-size: 20px; */
+  z-index: -10;
+  margin: 0;
+  /* position: relative; */
+  opacity: 0.9;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.delete-doctor-office-information-background {
+  margin: auto;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  background-color: lightyellow;
+  font-size: 40px;
+  font-family: fantasy;
+  box-shadow: 5px 10px 18px #888888;
+  font-family: fantasy;
+  height: 70vh;
+  width: 50%;
+  text-align: center;
 }
 
 /* Fun React Components CSS----------------------------------------------------------------------------------------*/

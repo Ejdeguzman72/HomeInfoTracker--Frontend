@@ -1,6 +1,7 @@
 import React from 'react';
 import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class DeleteRepairShopInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -30,15 +31,17 @@ export class DeleteRepairShopInformationComponent extends React.Component<any, a
                     <h1>Repair Shop Information: Delete Repair Shop</h1>
                     <hr></hr>
                     <RepairShopTabsComponent />
-                    <div className="form-row">
-                        <div className="centered">
-                            <input type="number" placeholder="Enter ID to be deleted" value={this.state.repairShopId} onChange={(event:any) => this.handleChange(event)} />
-                        </div>
-                    </div>
                     <br></br>
-                    <div className="form-row">
-                        <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Delete Contact Item</button>
-                    </div>
+                    <Container className="delete-repair-shop-container">
+                        <Form>
+                            <label>
+                                Enter Repair Shop ID No:
+                            </label><br></br>
+                            <input type="number" className="delete-repair-shop-input" onChange={(event: any) => this.handleChange(event)} />
+                            <br></br><br></br>
+                            <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                        </Form>
+                    </Container>
                 </div>
             </div>
         )

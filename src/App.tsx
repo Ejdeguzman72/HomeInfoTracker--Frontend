@@ -146,7 +146,7 @@ const App: React.FC = () => {
 
             {/* <Route path="/fun-applications" exact component={FunApplicationComponent} />
             <Route path="/to-do-list" exact component={ToDoListComponent} /> */}
-            <Route component={EntryHomeComponent} />
+            <Route component={LoginComponent} />
           </Switch>
       </HashRouter>
     </div>

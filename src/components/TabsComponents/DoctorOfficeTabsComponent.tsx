@@ -22,9 +22,9 @@ export class DoctorOfficeTabsComponent extends React.Component<any, any> {
                                     <li className="nav-item">
                                         <Link to="/update-doctor-office-information" className="nav-link" href="#" id="tab-link">Update Doctor Office Information</Link>
                                     </li>
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <Link to="delete-doctor-office-information" className="nav-link" href="#" id="tab-link">Delete Doctor Office Information</Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>

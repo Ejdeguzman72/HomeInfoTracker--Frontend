@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { MedicalRecordsTabsComponent } from '../TabsComponents/MedicalRecordsTabsComponent';
+import { Container, Form } from 'react-bootstrap';
 
 export class CreateMedicalRecordComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -39,7 +40,7 @@ export class CreateMedicalRecordComponent extends React.Component<any, any> {
             amount: event.target.value
         });
     }
-    
+
     handleDoctorNameChange(event: any) {
         this.setState({
             doctorName: event.target.value
@@ -76,61 +77,43 @@ export class CreateMedicalRecordComponent extends React.Component<any, any> {
                     <hr></hr>
                     <MedicalRecordsTabsComponent />
                     <br></br>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                    <Container className="add-medical-record-container">
+                        <Form>
+
                             <label>
                                 Enter Doctor Office ID:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Doctor Office ID " onChange={(event: any) => this.handledoctorOfficeIdChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+
+                            <input type="text" className="medical-record-input" onChange={(event: any) => this.handledoctorOfficeIdChange(event)} />
+                            <br></br>
                             <label>
                                 Enter Person ID:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Person ID " onChange={(event: any) => this.handlePersonIdChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+
+                            <input type="text" className="medical-record-input" onChange={(event: any) => this.handlePersonIdChange(event)} />
+                            <br></br>
                             <label>
                                 Amount ($0.00):
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Amount" value={this.state.amount} onChange={(event: any) => this.handleAmountChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+
+                            <input type="text" className="medical-record-input" value={this.state.amount} onChange={(event: any) => this.handleAmountChange(event)} />
+                            <br></br>
                             <label>
                                 Doctor Name:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Doctor Name" value={this.state.doctorName} onChange={(event: any) => this.handleDoctorNameChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+
+                            <input type="text" className="medical-record-input" onChange={(event: any) => this.handleDoctorNameChange(event)} />
+                            <br></br>
                             <label>
-                                Description: 
+                                Description:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Description" value={this.state.description} onChange={(event: any) => this.handleDescriptionChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-3 offset-1">
+
+                            <input type="text" className="medical-record-input" value={this.state.description} onChange={(event: any) => this.handleDescriptionChange(event)} />
+                            <br></br><br></br>
                             <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
-                        </div>
-                    </div>
+
+                        </Form>
+                    </Container>
                 </div>
             </div>
         )

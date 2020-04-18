@@ -1,6 +1,7 @@
 import React from 'react';
 import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class CreateRepairShopComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -33,7 +34,7 @@ export class CreateRepairShopComponent extends React.Component<any, any> {
             city: event.target.value
         });
     }
-    
+
     handleStateChange(event: any) {
         this.setState({
             state: event.target.value
@@ -45,7 +46,7 @@ export class CreateRepairShopComponent extends React.Component<any, any> {
             zip: event.target.value
         });
     }
-    
+
     handleSubmit(event: any) {
         event.preventDefault();
 
@@ -69,61 +70,40 @@ export class CreateRepairShopComponent extends React.Component<any, any> {
                     <hr></hr>
                     <RepairShopTabsComponent />
                     <br></br>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                    <Container className="add-repair-shop-container">
+                        <Form>
                             <label>
                                 Shop Name:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Shop Name" value={this.state.shopName} onChange={(event: any) => this.handleShopNameChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            <br></br>
+                            <input type="text" className="add-repair-shop-input" value={this.state.shopName} onChange={(event: any) => this.handleShopNameChange(event)} />
+                            <br></br>
                             <label>
                                 Address:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Address" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            <br></br>
+                            <input type="text" className="add-repair-shop-input" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} /><br></br>
                             <label>
                                 City:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter City" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            <br></br>
+                            <input type="text" className="add-repair-shop-input" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
+                            <br></br>
                             <label>
                                 State
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter State" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
+                            <br></br>
+                            <input type="text" className="add-repair-shop-input" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
+                            <br></br>
                             <label>
                                 Zip Code:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Zip Code" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1 offset-1">
+                            <br></br>
+                            <input type="text" className="add-repair-shop-input" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
+                            <br></br><br></br>
                             <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
-                        </div>
-                    </div>
+                        </Form>
+                    </Container>
                 </div>
             </div>
         )

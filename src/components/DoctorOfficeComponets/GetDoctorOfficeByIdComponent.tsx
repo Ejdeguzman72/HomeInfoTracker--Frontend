@@ -1,8 +1,6 @@
 import React from 'react';
-import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
-import { thisExpression } from '@babel/types';
 import Axios from 'axios';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form } from 'react-bootstrap';
 import { DoctorOfficeTabsComponent } from '../TabsComponents/DoctorOfficeTabsComponent';
 
 export class GetDoctorOfficeByIdComponent extends React.Component<any, any> {
@@ -56,9 +54,18 @@ export class GetDoctorOfficeByIdComponent extends React.Component<any, any> {
                     <h1>Doctor Office Information: Get Doctor Office By ID Number</h1>
                     <hr></hr>
                     <DoctorOfficeTabsComponent />
-                    <input type="number" placeholder="Enter Doctor Office ID Number" value={this.state.doctorOfficeId} onChange={(event: any) => this.handleChange(event)}/>
-                    <br></br><br></br>
-                    <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                    <br></br>
+                    <Container className="doctor-office-info-container">
+                        <Form>
+                            <label>
+                                Enter Office ID No:
+                            </label><br></br>
+                            <input type="number" className="doctor-office-info-input" onChange={(event: any) => this.handleChange(event)}/>
+                            <br></br><br></br>
+                            <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                        </Form>
+                    </Container>
+                    <br></br>
                     <Table striped bordered hover>
                         <thead>
                             <tr>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { DoctorOfficeTabsComponent } from '../TabsComponents/DoctorOfficeTabsComponent';
+import { Container, Form } from 'react-bootstrap';
 
 export class AddDoctorOfficeComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -17,47 +18,47 @@ export class AddDoctorOfficeComponent extends React.Component<any, any> {
         };
     }
 
-   handleDoctorOfficeIdChange(event: any) {
-       this.setState({
-           doctorOfficeId: event.target.value
-       });
-   }
+    handleDoctorOfficeIdChange(event: any) {
+        this.setState({
+            doctorOfficeId: event.target.value
+        });
+    }
 
-   handleDoctorOfficeTypeIdChange(event: any) {
-       this.setState({
-           doctorOfficeTypeId: event.target.value
-       });
-   }
+    handleDoctorOfficeTypeIdChange(event: any) {
+        this.setState({
+            doctorOfficeTypeId: event.target.value
+        });
+    }
 
-   handleNameChange(event: any) {
-       this.setState({
-           name: event.target.value
-       });
-   }
+    handleNameChange(event: any) {
+        this.setState({
+            name: event.target.value
+        });
+    }
 
-   handleAddressChange(event: any) {
-       this.setState({
-           address: event.target.value
-       });
-   }
+    handleAddressChange(event: any) {
+        this.setState({
+            address: event.target.value
+        });
+    }
 
-   handleCityChange(event: any) {
-       this.setState({
-           city: event.target.value
-       });
-   }
+    handleCityChange(event: any) {
+        this.setState({
+            city: event.target.value
+        });
+    }
 
-   handleStateChange(event: any) {
-       this.setState({
-           state: event.target.event
-       });
-   }
+    handleStateChange(event: any) {
+        this.setState({
+            state: event.target.event
+        });
+    }
 
-   handleZipChange(event: any) {
-       this.setState({
-           zip: event.target.value
-       });
-   }
+    handleZipChange(event: any) {
+        this.setState({
+            zip: event.target.value
+        });
+    }
 
     handleSubmit(event: any) {
         event.preventDefault();
@@ -84,71 +85,43 @@ export class AddDoctorOfficeComponent extends React.Component<any, any> {
                     <hr></hr>
                     <DoctorOfficeTabsComponent />
                     <br></br>
-                    {/* <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Doctor Office ID
+                    <Container className="add-doctor-office-information-container">
+                        <Form>
+                         
+                                    <label>
+                                        Doctor Name:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Doctor Office Type ID" value={this.state.address} onChange={(event: any) => this.handleDoctorOfficeTypeIdChange(event)} />
-                        </div>
-                    </div> */}
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Doctor Name:
+                               
+                                    <input type="text" className="doctor-office-info-input" placeholder="Enter Name" value={this.state.address} onChange={(event: any) => this.handleNameChange(event)} />
+                               <br></br>
+                                    <label>
+                                        Address:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Name" value={this.state.address} onChange={(event: any) => this.handleNameChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Address:
+                              
+                                    <input type="text" className="doctor-office-info-input" placeholder="Enter Address" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
+                               
+                                    <label>
+                                        City
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Address" value={this.state.address} onChange={(event: any) => this.handleAddressChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                City
+                               
+                                    <input type="text" className="doctor-office-info-input" placeholder="Enter City" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
+                                    <br></br>
+                                    <label>
+                                        State
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter City" value={this.state.city} onChange={(event: any) => this.handleCityChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                State
+                              
+                                    <input type="text" className="doctor-office-info-input" placeholder="Enter State" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
+                                    <br></br>
+                                    <label>
+                                        Zip Code:
                             </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter State" value={this.state.state} onChange={(event: any) => this.handleStateChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-1">
-                            <label>
-                                Zip Code:
-                            </label>
-                        </div>
-                        <div className="form-group col-md-3">
-                            <input type="text" placeholder="Enter Zip Code" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-3 offset-1">
-                            <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
-                        </div>
-                    </div>
+                              
+                                    <input type="text" className="doctor-office-info-input" placeholder="Enter Zip Code" value={this.state.zip} onChange={(event: any) => this.handleZipChange(event)} />
+                                    <br></br><br></br>
+                                    <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                             
+                        </Form>
+                    </Container>
                 </div>
             </div>
         )

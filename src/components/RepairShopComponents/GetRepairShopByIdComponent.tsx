@@ -1,8 +1,7 @@
 import React from 'react';
 import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
-import { thisExpression } from '@babel/types';
 import Axios from 'axios';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form } from 'react-bootstrap';
 
 export class GetRepairShopByIdComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -53,9 +52,17 @@ export class GetRepairShopByIdComponent extends React.Component<any, any> {
                     <h1>Repair Shop Information: Get Repair Shop By ID Number</h1>
                     <hr></hr>
                     <RepairShopTabsComponent />
-                    <input type="number" placeholder="Enter Repair Shop ID Number" value={this.state.repairShopId} onChange={(event: any) => this.handleChange(event)}/>
-                    <br></br><br></br>
-                    <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                    <br></br>
+                    <Container className="get-repair-shop-by-id-container"> 
+                        <Form>
+                            <label>
+                                Enter Repair Shop ID No:
+                            </label><br></br>
+                            <input type="number" className="get-repair-shop-by-id-input" onChange={(event: any) => this.handleChange(event)}/>
+                            <br></br><br></br>
+                            <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                        </Form>
+                    </Container>
                     <Table striped bordered hover>
                         <thead>
                             <tr>
