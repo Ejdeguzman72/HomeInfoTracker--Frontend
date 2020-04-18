@@ -1,6 +1,7 @@
 import React from 'react';
 import { CarRecordsTabsComponent } from '../TabsComponents/CarRecordsTabComponent';
 import Axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 
 export class AddCarRecordInformationComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -41,57 +42,45 @@ export class AddCarRecordInformationComponent extends React.Component<any, any> 
             repairShopId: this.state.repairShopId
         };
         // const url = (`http://localhost:8080/app/car-records/add-a-record`);
-        Axios.post(`http://localhost:8080/app/car-records/add-a-record`, carRecord );
+        Axios.post(`http://localhost:8080/app/car-records/add-a-record`, carRecord);
         alert(`created car record`);
         console.log(carRecord);
     }
     render() {
-        return(
+        return (
             <div>
                 <div id="hero-add-car-record-information-background">
                     <h1>Car Record Information: Add Car Record Information</h1>
                     <hr></hr>
                     <CarRecordsTabsComponent />
-                        <div className="form-row">
-                            <div className="form-group col-md-1">
-                                <label>
-                                    Amount ($0.00):
+                    <br></br>
+                    <Container className="add-car-record-information-container">
+                        <Form>
+
+                            <label>
+                                Amount ($0.00):
                                 </label>
-                            </div>
-                            <div className="form-group col-md-3">
-                                <input type="text" placeholder="Enter Amount" value={this.state.amount} onChange={(event: any) => this.handleAmountChange(event)} />
-                            </div>
-                        </div>
-                        <br></br>
-                        <div className="form-row">
-                            <div className="form-group col-md-1">
-                                <label>
-                                    Car Job ID:
-                                </label>
-                            </div>
-                            <div className="form-group col-md-3">
-                                <input type="text" placeholder="Enter Car Job" value={this.state.carJobId} onChange={(event: any) => this.handleCarJobIdChange(event)} />
-                            </div>
-                        </div>
-                        <br></br>
-                        <div className="form-row">
-                            <div className="form-group col-md-1">
-                                <label>
-                                    Repair Shop:
-                                </label>
-                            </div>
-                            <div className="form-group col-md-3">
-                                <input type="text" placeholder="Enter Repair Shop" value={this.state.repairShopId} onChange={(event: any) => this.handleRepairShopIdChange(event)} />
-                            </div>
-                        </div>
-                        <br></br>
-                        <div className="form-row">
-                            <div className="form-group col-md-1 offset-1">
-                                <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
-                            </div>
-                        </div>
-                    </div>
+                            <br></br>
+                            <input type="text" className="add-car-record-information-input" onChange={(event: any) => this.handleAmountChange(event)} />
+                            <br></br>
+                            <label>
+                                Car Job ID:
+                            </label>
+                            <br></br>
+                            <input type="text" className="add-car-record-information-input" onChange={(event: any) => this.handleCarJobIdChange(event)} />
+                            <br></br>
+                            <label>
+                                Repair Shop:
+                            </label>
+                            <br></br>
+                            <input type="text" className="add-car-record-information-input" onChange={(event: any) => this.handleRepairShopIdChange(event)} />
+                            <br></br><br></br>
+                            <button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</button>
+                        </Form>
+                    </Container>
+
                 </div>
+            </div>
         )
     }
 }

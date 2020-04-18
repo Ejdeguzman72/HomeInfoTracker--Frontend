@@ -1,6 +1,6 @@
 import React from 'react';
 import { CarRecordsTabsComponent } from '../TabsComponents/CarRecordsTabComponent';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Form } from 'react-bootstrap';
 import Axios from 'axios';
 
 export class GetCarRecordInformationByIdComponent extends React.Component<any, any> {
@@ -54,13 +54,20 @@ export class GetCarRecordInformationByIdComponent extends React.Component<any, a
                     <h1>Car Record Information: Get Car Record Information By ID</h1>
                     <hr></hr>
                     <CarRecordsTabsComponent />
-                    <div className="get-car-record-information-by-id-split get-car-record-information-by-id-left">
-                            <div className="get-car-record-information-by-id-centered">
-                                <input type="number" placeholder="Enter Car ID Number" value={this.state.carRecordId} onChange={(event:any) => this.handleChange(event)}/>
-                                <br></br><br></br>
-                                <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
-                            </div>
-                        </div>
+                            <div className="get-car-record-information-by-id-split get-car-record-information-by-id-left">
+                                    <div className="get-car-record-information-by-id-centered">
+                                        <Container className="get-car-record-by-id-container">
+                                            <Form>
+                                                <label>
+                                                    Enter Car Record ID:
+                                                </label>
+                                                <input type="number" className="get-car-record-by-id-input" onChange={(event:any) => this.handleChange(event)}/>
+                                                <br></br><br></br>
+                                                <button className="btn-dark" onClick={() => this.handleSubmit()}>Submit</button>
+                                            </Form>
+                                        </Container>
+                                    </div>
+                                </div>
                         <div className="get-car-record-information-by-id-split get-car-record-information-by-id-right">
                             <div className="get-car-record-information-by-id-centered">
                                     <Table striped bordered hover>
