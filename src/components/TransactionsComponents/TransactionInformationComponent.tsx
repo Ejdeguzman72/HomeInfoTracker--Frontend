@@ -12,9 +12,8 @@ export class TransactionInformationComponent extends React.Component<any, any> {
                     <br></br>
                     <div id="transaction-information-container">
                         <p>The following information pertains to transactions. Entries can be entered in the system
-                        for different types of expenses such as housing, food, utilities, etc. It is imperative that information
-                        is entered correctly and that it is accurate. It is possible to attach receipts or other supporting documents
-                        to back these transactions.
+                        for different types of expenses such as housing, food, utilities, etc. Users are able to 
+                        retrieve transaction information, enter new transactions and update information.
                         </p>
                     </div>
                 </div>

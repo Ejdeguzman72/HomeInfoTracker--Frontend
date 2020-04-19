@@ -48,6 +48,9 @@ export default class Login extends React.Component<any, any> {
     return (
       <div id="hero-login-background">
         <div id="hero-login-overlay">
+          <br></br>
+          <br></br>
+          <br></br>
           <div className="login-container">
             {this.state.shouldRedirect ? <Redirect to="/home" /> : null}
            
