@@ -54,10 +54,10 @@ export default class Login extends React.Component<any, any> {
           <div className="login-container">
             {this.state.shouldRedirect ? <Redirect to="/home" /> : null}
            
-            <Form.Control type="text" name="username" size="lg" className="login-input" placeholder="username" onChange={(e:any) => this.change(e)} value={this.state.username} />
+            <input type="text" name="username" className="login-input" placeholder="username" onChange={(e:any) => this.change(e)} value={this.state.username} />
             <br></br><br></br>
            
-            <Form.Control type="password" name="password" size="lg" className="login-input" placeholder="password" onChange={(e: any) => this.change(e)} value={this.state.password} />
+            <input type="password" name="password" className="login-input" placeholder="password" onChange={(e: any) => this.change(e)} value={this.state.password} />
             <br></br><br></br>
             <Button type="button" size="lg" variant="light" onClick={(e: any) => this.submit(e)}>
               --Login--

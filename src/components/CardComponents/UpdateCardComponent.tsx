@@ -74,7 +74,7 @@ export class UpdateCardComponent extends React.Component<any, any> {
     render() {
         return (
             <div>
-                <div id="hero-add-card-information-background">
+                <div id="hero-update-card-information-background">
                     <h1>Card Information: Update Card Information</h1>
                     <hr></hr>
                     <CardTabsComponent />
