@@ -39,7 +39,7 @@ export class DeleteBankInformationComponent extends React.Component<any, any> {
                                     Enter Bank ID No:
                                 </label>
                                 <br></br>
-                                <input type="number" placeholder="Enter ID to be deleted" value={this.state.bankid} onChange={(event: any) => this.handleChange(event)} />
+                                <input type="number" className="delete-bank-information-input" onChange={(event: any) => this.handleChange(event)} />
                                 <br></br><br></br>
                                 <Button className="btn-dark" onClick={(event: any) => this.handleSubmit(event)}>Submit</Button>
                             </Form>

@@ -103,7 +103,7 @@
   margin: auto;
   padding: 20px;
   text-align: center;
-  font-size: 3vw;
+  font-size: 2em;
   height: 70vh;
   width: 50%;
   border-style: solid;
@@ -112,6 +112,7 @@
   font-family: fantasy;
   box-shadow: 10px 18px #888888;
   overflow-wrap: break-word;
+  overflow: scroll;
 }
 
 .contact-information-container p{
@@ -209,12 +210,13 @@
   border-color: black;
   border-style: solid;
   text-align: center;
-  font-size: 30px;
+  font-size: 2em;
   box-shadow: 10px 18px #888888;
   height: 75vh;
   margin: auto;
   padding: 20px;
   font-family: fantasy;
+  overflow: scroll;
 }
 
 .create-contact-information-container label {
@@ -260,6 +262,7 @@
   text-align: center;
   font-size: 1em;
   font-family: fantasy;
+  overflow: scroll;
 }
 
 .update-contact-information-input {
@@ -319,8 +322,8 @@
   padding: 10px;
   text-align: center;
   font-size: 20px;
-  font-size: 3vw;
-  width: 50%;
+  font-size: 1em;
+  width: 60%;
   height: 70vh;
   background-color: lightyellow;
   border-style: solid;
@@ -408,7 +411,7 @@
   background-position: center center;
   top: 0;
   /* bottom: 0; */
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   z-index: -10;
   margin: 0;
@@ -424,7 +427,7 @@
   margin: auto;
   /* padding: 10px; */
   font-family: fantasy;
-  font-size: 25px;
+  font-size: 1em;
   height: 60vh;
   margin: auto;
   text-align: center;
@@ -462,10 +465,11 @@
   margin: auto;
   padding: 20px;
   font-family: fantasy;
-  font-size: 25px;
+  font-size: 1em;
   height: 60vh;
   margin: auto;
   text-align: center;
+  overflow: scroll;
 }
 
 .update-transaction-information-input {
@@ -504,12 +508,13 @@
   text-align: center;
   font-size: 1em;
   height: 70vh;
-  width: 50%;
+  width: 60%;
   font-family: fantasy;
   border-color: black;
   border-style: solid;
   background-color: lightyellow;
   box-shadow: 10px 18px #888888;
+  overflow: scroll;
 }
 
 #hero-get-all-card-information-background {
@@ -589,9 +594,10 @@
   margin: auto;
   padding: 20px;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 2em;
   box-shadow: 10px 18px #888888;
   text-align: center;
+  overflow: scroll;
 }
 
 .add-card-information-input {
@@ -625,9 +631,10 @@
   margin: auto;
   padding: 20px;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 2em;
   box-shadow: 10px 18px #888888;
   text-align: center;  
+  overflow: scroll;
 }
 
 .update-card-information-input {
@@ -874,7 +881,7 @@
   margin: auto;
   padding: 10px;
   text-align: center;
-  font-size: 50px;
+  font-size: 1em;
   width: 50%;
   height: 70vh;
   border-style: solid;
@@ -974,9 +981,10 @@
   height: 80vh;
   padding: 10px;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 2em;
   background-color: lightyellow;
   width: 30%;
+  overflow: scroll;
 }
 
 .add-car-information-input {
@@ -1014,9 +1022,10 @@
   height: 90vh;
   padding: 10px;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 2em;
   background-color: lightyellow;
   width: 30%;
+  overflow: scroll;
 }
 
 .update-car-information-center-input {
@@ -1099,8 +1108,9 @@
   padding:  20px;
   margin: auto;
   font-family: fantasy;
-  height: 40vh;;
+  height: 50vh;;
 }
+
 
 .get-car-record-information-by-id-split {
   /* height: 100%; */
@@ -1136,13 +1146,16 @@
   margin: auto;
   padding: 20px;
   text-align: center;
-  font-size: 50px;
   width: 50%;
   border-color: black;
   border-style: solid;
   background-color: lightyellow;
   box-shadow: 5px 10px 18px #888888;
   font-family: fantasy;
+}
+
+#car-record-information-container p  {
+  font-size: 1em;
 }
 
 .get-car-record-by-id-input {
@@ -1216,7 +1229,7 @@
   margin: auto;
   padding: 20px;
   text-align: center;
-  font-size: 20px;
+  font-size: 2em;
   width: 50%;
   border-color: black;
   border-style: solid;
@@ -1224,6 +1237,7 @@
   box-shadow: 5px 10px 18px #888888;
   font-family: fantasy;
   height: 50vh;
+  overflow: scroll;
 }
 
 .add-car-record-information-input {
@@ -1261,6 +1275,7 @@
   box-shadow: 5px 10px 18px #888888;
   font-family: fantasy;
   height: 50vh;
+  overflow: scroll;
 }
 
 .update-car-record-information-input {
@@ -1312,14 +1327,15 @@
 #repair-shop-info-container {
   margin: auto;
   padding: 20px;
-  width: 50%;
-  height: 80vh;
-  font-size: 50px;
+  width: 60%;
+  height: 60vh;
+  font-size: 1em;
   font-family: fantasy;
   border-color: black;
   border-style: solid;
   box-shadow: 5px 10px 18px #888888;
   background-color: lightyellow;
+  overflow: scroll;
 }
 
 #hero-repair-information-background {
@@ -1373,12 +1389,13 @@
   width: 50%;
   height: 80vh;
   text-align: center;
-  font-size: 40px;
+  font-size: 2em;
   font-family: fantasy;
   border-color: black;
   border-style: solid;
   box-shadow: 5px 10px 18px #888888;
   background-color: lightyellow;
+  overflow: scroll;
 }
 
 .get-repair-shop-by-id-input {
@@ -1406,15 +1423,16 @@
 .add-repair-shop-container {
   margin: auto;
   padding: 10px;
-  width: 50%;
+  width: 60%;
   height: 85vh;
   text-align: center;
-  font-size: 40px;
+  font-size: 2em;
   font-family: fantasy;
   border-color: black;
   border-style: solid;
   box-shadow: 5px 10px 18px #888888;
   background-color: lightyellow;
+  overflow: scroll;
 }
 
 .add-repair-shop-input {
@@ -1442,10 +1460,11 @@
 .update-repair-shop-container {
   margin: auto;
   padding: 10px;
-  width: 50%;
+  width: 60%;
   height: 85vh;
   text-align: center;
-  font-size: 30px;
+  font-size: 2em;
+  overflow: scroll;
   font-family: fantasy;
   border-color: black;
   border-style: solid;
@@ -1528,6 +1547,7 @@
   font-family: fantasy;
   height: 50vh;
   width: 50%;
+  overflow: scroll;
   text-align: center;
 }
 
@@ -1557,6 +1577,7 @@
   height: 50vh;
   width: 50%;
   text-align: center;
+  overflow: scroll;
 }
 
 .medical-record-input {
@@ -1659,7 +1680,8 @@
   border-color: black;
   border-style: solid;
   background-color: lightyellow;
-  font-size: 40px;
+  font-size: 2em;
+  overflow: scroll;
   font-family: fantasy;
   box-shadow: 5px 10px 18px #888888;
   font-family: fantasy;
@@ -1690,13 +1712,14 @@
   border-color: black;
   border-style: solid;
   background-color: lightyellow;
-  font-size: 40px;
+  font-size: 2em;
   font-family: fantasy;
   box-shadow: 5px 10px 18px #888888;
   font-family: fantasy;
   height: 70vh;
   width: 50%;
   text-align: center;
+  overflow: scroll;
 }
 
 #hero-delete-doctor-office-information-background {
