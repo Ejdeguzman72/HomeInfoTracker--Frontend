@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { EntryHomeComponent } from './components/home-component';
 import { CarInformationComponent } from './components/CarComponents/CarInformationComponent'
 // import './include/bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -60,6 +59,7 @@ import {AddBankInformationComponent } from './components/BankComponents/AddBankI
 import { UpdateBankInformationComponent } from './components/BankComponents/UpdateBankInformationComponent';
 import { DeleteBankInformationComponent } from './components/BankComponents/DeleteBankInformation';
 import  LoginComponent  from './components/LoginComponent/LoginComponent';
+import { EntryHomeComponent } from './components/HomeComponent/home-component';
 
 const App: React.FC = () => {
   return (
