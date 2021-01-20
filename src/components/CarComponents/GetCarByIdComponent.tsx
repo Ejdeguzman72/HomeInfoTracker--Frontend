@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarTabsComponent } from '../TabsComponents/CarTabsComponent';
+import CarTabsComponent from '../TabsComponents/CarTabsComponent';
 import { Table, Container, Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 

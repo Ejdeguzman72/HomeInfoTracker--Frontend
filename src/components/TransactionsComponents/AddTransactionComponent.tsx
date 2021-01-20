@@ -1,7 +1,7 @@
 import React from 'react';
-import { TransactionTabsComponent } from '../TabsComponents/TransactionTabsComponent';
 import Axios from 'axios';
 import { Container, Form } from 'react-bootstrap';
+import TransactionTabsComponent from '../TabsComponents/TransactionTabsComponent';
 
 export class AddTransactionComponent extends React.Component<any, any> {
     constructor(props: any) {

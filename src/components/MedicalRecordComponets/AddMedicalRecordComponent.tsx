@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
-import { MedicalRecordsTabsComponent } from '../TabsComponents/MedicalRecordsTabsComponent';
 import { Container, Form } from 'react-bootstrap';
+import MedicalRecordsTabsComponent from '../TabsComponents/MedicalRecordsTabsComponent';
 
 export class CreateMedicalRecordComponent extends React.Component<any, any> {
     constructor(props: any) {

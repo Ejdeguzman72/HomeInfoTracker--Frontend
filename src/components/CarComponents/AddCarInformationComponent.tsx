@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import { CarTabsComponent } from '../TabsComponents/CarTabsComponent';
+import CarTabsComponent from '../TabsComponents/CarTabsComponent';
 import { Container, Form } from 'react-bootstrap';
 
 export class AddCarInformationComponent extends React.Component<any, any> {

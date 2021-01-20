@@ -1,5 +1,5 @@
 import React from 'react';
-import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
+import BankTabComponent from '../TabsComponents/BankTabsComponent';
 import { Table, Container, Form, Button } from 'react-bootstrap';
 import Axios from 'axios';
 
@@ -53,7 +53,7 @@ export class GetBankByIDComponent extends React.Component<any, any> {
                     <div id="hero-get-bank-information-by-id-background">
                         <h1>Bank Information: Get Bank Information By ID</h1>
                         <hr></hr>
-                        <BankTabsComponent />
+                        {/* <BankTabsComponent /> */}
                         <Container className="get-bank-information-by-id-container">
                             <Form>
                                 <label>

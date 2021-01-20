@@ -1,5 +1,5 @@
 import React from 'react';
-import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
+import RepairShopTabsComponent from '../TabsComponents/RepairShopTabsComponent';
 import Axios from 'axios';
 import { Container, Form } from 'react-bootstrap';
 

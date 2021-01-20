@@ -1,5 +1,5 @@
 import React from 'react';
-import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
+import BankTabComponent from '../TabsComponents/BankTabsComponent';
 import Axios from 'axios';
 import { Container, Form } from 'react-bootstrap';
 
@@ -75,7 +75,7 @@ export class UpdateBankInformationComponent extends React.Component<any, any> {
                 <div id="hero-update-bank-information-background">
                     <h1>Bank Information: Update a Bank</h1>
                     <hr></hr>
-                    <BankTabsComponent />
+                    {/* <BankTabsComponent /> */}
                     <br></br>
                     <Container className="update-bank-information-container">
                         <Form>

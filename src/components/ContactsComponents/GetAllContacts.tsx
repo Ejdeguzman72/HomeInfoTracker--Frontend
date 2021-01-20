@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
+import ContactTabsComponent from '../TabsComponents/ContactTabsComponent';
 import { Table } from 'react-bootstrap';
 import Axios from 'axios';
 

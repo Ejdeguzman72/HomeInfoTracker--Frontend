@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardTabsComponent } from '../TabsComponents/CardTabsComponent';
+import CardTabsComponent from '../TabsComponents/CardTabsComponent';
 import { Table } from 'react-bootstrap';
 import Axios from 'axios';
 

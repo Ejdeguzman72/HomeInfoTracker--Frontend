@@ -1,5 +1,5 @@
 import React from 'react';
-import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
+import BankTabComponent from '../TabsComponents/BankTabsComponent';
 import { Table } from 'react-bootstrap';
 import Axios from 'axios';
 
@@ -49,7 +49,7 @@ export class GetAllBankInformationComponent extends React.Component<any, any> {
                     <div id="hero-get-all-bank-information-background">
                         <h1>Bank Information: Get All Banks</h1>
                         <hr></hr>
-                        <BankTabsComponent />
+                        {/* <BankTabsComponent /> */}
                         <br></br>
                         <Table striped bordered hover>
                             <thead>

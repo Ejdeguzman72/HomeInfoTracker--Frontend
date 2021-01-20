@@ -1,7 +1,5 @@
 import React from 'react';
-import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
-import { DoctorOfficeTabsComponent } from '../TabsComponents/DoctorOfficeTabsComponent';
-import { MedicalRecordsTabsComponent } from '../TabsComponents/MedicalRecordsTabsComponent';
+import MedicalRecordsTabsComponent from '../TabsComponents/MedicalRecordsTabsComponent';
 
 export class MedicalRecordInfomrationComponent extends React.Component<any, any> {
     render() {

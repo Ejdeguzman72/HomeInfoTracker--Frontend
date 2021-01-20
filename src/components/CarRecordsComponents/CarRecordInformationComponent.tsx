@@ -1,13 +1,16 @@
 import React from 'react';
-import { CarRecordsTabsComponent } from '../TabsComponents/CarRecordsTabComponent';
+import CarRecordsTabsComponent from '../TabsComponents/CarRecordsTabComponent';
+import HomeTabComponent from '../TabsComponents/HomeTabComponent';
+
 
 export class CarRecordInformationComponent extends React.Component<any, any> {
     render() {
         return (
-            <div>
+            <div className="tab-center">
                 <div id="hero-car-record-information-background">
                     <h1>Car Record Information</h1>
                     <hr></hr>
+                    <HomeTabComponent />
                     <CarRecordsTabsComponent />
                     <br></br>
                     <div id="car-record-information-container">

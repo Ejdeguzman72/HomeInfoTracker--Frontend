@@ -1,5 +1,5 @@
 import React from 'react';
-import { BankTabsComponent } from '../TabsComponents/BankTabsComponent';
+import BankTabComponent from '../TabsComponents/BankTabsComponent';
 import Axios from 'axios';
 import { Container, Form, Button } from 'react-bootstrap';
 
@@ -32,7 +32,7 @@ export class DeleteBankInformationComponent extends React.Component<any, any> {
                     <div id="hero-delete-car-information-background">
                         <h1>Bank Information: Delete Bank Information</h1>
                         <hr></hr>
-                        <BankTabsComponent />
+                        {/* <BankTabsComponent /> */}
                         <Container className="delete-bank-information-container">
                             <Form>
                                 <label>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MedicalRecordsTabsComponent } from '../TabsComponents/MedicalRecordsTabsComponent';
+import MedicalRecordsTabsComponent from '../TabsComponents/MedicalRecordsTabsComponent';
 import { Table } from 'react-bootstrap';
 import Axios from 'axios';
 

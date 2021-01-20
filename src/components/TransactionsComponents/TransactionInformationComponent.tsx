@@ -1,14 +1,16 @@
 import React from 'react';
-import { TransactionTabsComponent } from '../TabsComponents/TransactionTabsComponent';
+import TransactionTabsComponent from '../TabsComponents/TransactionTabsComponent';
 import { Container } from 'react-bootstrap';
+import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 
 export class TransactionInformationComponent extends React.Component<any, any> {
     render() {
         return (
-            <div>
+            <div className="tab-center">
                 <div id="hero-transaction-information-background">
                     <h1>Transaction Information</h1>
                     <hr></hr>
+                    <HomeTabComponent />
                     <TransactionTabsComponent />
                     <br></br>
                     <Container id="transaction-information-container">

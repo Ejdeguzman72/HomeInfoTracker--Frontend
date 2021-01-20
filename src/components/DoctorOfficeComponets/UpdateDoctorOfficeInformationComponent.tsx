@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import { DoctorOfficeTabsComponent } from '../TabsComponents/DoctorOfficeTabsComponent';
+import DoctorOfficeTabsComponent from '../TabsComponents/DoctorOfficeTabsComponent';
 import { Container, Form } from 'react-bootstrap';
 
 export class UpdateDoctorOfficeInformationComponent extends React.Component<any, any> {

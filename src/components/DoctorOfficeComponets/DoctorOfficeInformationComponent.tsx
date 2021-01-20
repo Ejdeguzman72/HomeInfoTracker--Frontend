@@ -1,14 +1,16 @@
 import React from 'react';
-import { DoctorOfficeTabsComponent } from '../TabsComponents/DoctorOfficeTabsComponent';
 import { Container } from 'react-bootstrap';
+import DoctorOfficeTabsComponent from '../TabsComponents/DoctorOfficeTabsComponent';
+import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 
 export class DoctorOfficeInfomrationComponent extends React.Component<any, any> {
     render() {
         return (
-            <div>
+            <div className="tab-center">
                 <div id="hero-doctor-office-information-background">
                     <h1>Doctor Office Information</h1>
                     <hr></hr>
+                    <HomeTabComponent />
                     <DoctorOfficeTabsComponent />
                     <br></br>
                     <Container className="doctor-office-info-container">

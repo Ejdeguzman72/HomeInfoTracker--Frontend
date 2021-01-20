@@ -19,6 +19,23 @@
   color: black;
 }
 
+.tab-center {
+  text-align: center;
+}
+
+#tabs {
+  background-color: rgb(16,16,16);
+  font-family: fantasy;
+  font-size: 30px;
+  width: 100%;
+  color: white;
+  margin: 5px;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: black;
+  opacity: 0.8;
+}
+
 #hero-home {
   background-image: url('./assets/Long-row-of-suburban-townhouses-with-a-white-picket-fence-in-front.-min-e1442000949923.jpg');
   background-size: cover;

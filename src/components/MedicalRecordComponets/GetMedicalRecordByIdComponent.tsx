@@ -1,9 +1,7 @@
 import React from 'react';
-import { RepairShopTabsComponent } from '../TabsComponents/RepairShopTabsComponent';
-import { thisExpression } from '@babel/types';
 import Axios from 'axios';
 import { Table, Container, Form } from 'react-bootstrap';
-import { MedicalRecordsTabsComponent } from '../TabsComponents/MedicalRecordsTabsComponent';
+import MedicalRecordsTabsComponent from '../TabsComponents/MedicalRecordsTabsComponent';
 
 export class GetMedicalRecordByIdComponent extends React.Component<any, any> {
     constructor(props: any) {

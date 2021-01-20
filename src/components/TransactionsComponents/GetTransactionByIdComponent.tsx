@@ -1,5 +1,5 @@
 import React from 'react';
-import { TransactionTabsComponent } from '../TabsComponents/TransactionTabsComponent';
+import TransactionTabsComponent from '../TabsComponents/TransactionTabsComponent';
 import { Table, Container, Form } from 'react-bootstrap';
 import Axios from 'axios';
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import { MedicalRecordsTabsComponent } from '../TabsComponents/MedicalRecordsTabsComponent';
 import { Table } from 'react-bootstrap';
 import Axios from 'axios';
-import { DoctorOfficeTabsComponent } from '../TabsComponents/DoctorOfficeTabsComponent';
+import DoctorOfficeTabsComponent from '../TabsComponents/DoctorOfficeTabsComponent';
 
 export class GetAllDoctorOfficeInformationComponent extends React.Component<any, any> {
     constructor(props: any) {

@@ -1,16 +1,16 @@
 import React from 'react';
-import { ContactTabsComponent } from '../TabsComponents/ContactTabsComponent';
 import { Form, Container } from 'react-bootstrap';
+import ContactTabsComponent from '../TabsComponents/ContactTabsComponent';
+import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 
 export class ContactInfomrationComponent extends React.Component<any, any> {
-
-
     render() {
         return (
-            <div>
+            <div className="tab-center">
                 <div id="hero-contact-information-background">
                     <h1>Contact Information</h1>
                     <hr></hr>
+                    <HomeTabComponent />
                     <ContactTabsComponent />
                     <br></br>
                     <Container className="contact-information-container">

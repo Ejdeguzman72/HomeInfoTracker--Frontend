@@ -1,5 +1,5 @@
 import React from 'react';
-import { TransactionTabsComponent } from '../TabsComponents/TransactionTabsComponent';
+import TransactionTabsComponent from '../TabsComponents/TransactionTabsComponent';
 import Axios from 'axios';
 
 export class DeleteTransactionInformationComponent extends React.Component<any, any> {
