@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-import AutoTransactionService from '../../../services/auto-transaction-service';
+// import AutoTransactionService from '../../../services/auto-transaction-service';
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -42,41 +42,44 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
-export default function TransactionTableComponent() {
+export default function MedicalRecordInformationTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Transaction ID', field: 'autoTransactionId', hidden: true },
-      { title: 'Amount', field: 'amount' },
-      { title: 'Repair Shop Name', field: 'shopName' },
-      { title: 'Person Name', field: 'person' },
-      { title: 'Date', field: 'autoTransactionDate' }
+      { title: 'Bank ID', field: 'bankid', hidden: true },
+      { title: 'Name', field: 'name' },
+      { title: 'Address', field: 'address' },
+      { title: 'City', field: 'city' },
+      { title: 'State', field: 'state' },
+      { title: 'Zip', field: 'zip'}
     ],
   });
 
   const [entries, setEntries] = useState({
     data: [
       {
-        autoTransactionId: 0,
-        amount: 0,
-        shopName: "",
-        person: "",
-        autoTransactionDate: "",
+        bankid: 0,
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: ""
       }
     ]
   });
 
-  const [fileName, setFileName] = useState("Transaction Information");
+  const [fileName, setFileName] = useState("Bank Information");
 
   useEffect(() => {
-    AutoTransactionService.getAllAutoTransactions().then(response => {
+    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
-          autoTransactionId: e1.autoTransactionId,
-          autoTransactionDate: e1.autoTransactionDate,
-          shopName: e1.shopName,
-          amount: e1.amount,
-          person: e1.person
+            bankid: e1.bankid,
+            name: e1.name,
+            address: e1.address,
+            city: e1.city,
+            state: e1.state,
+            zip: e1.zip
         });
         console.log(data);
       });
@@ -143,13 +146,13 @@ export default function TransactionTableComponent() {
 
         </Col>
         <Col md={2}>
-          <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} />
+          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
         </Col>
       </Row>
       <br></br>
       <Box border={3} borderRadius={16}>
         <MaterialTable
-          title="Auto Finances"
+          title="Medical Records"
           icons={tableIcons}
           columns={state.columns}
           data={entries.data}

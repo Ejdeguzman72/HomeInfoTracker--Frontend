@@ -1,13 +1,14 @@
 import React from 'react';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import RepairShopTabsComponent from '../TabsComponents/RepairShopTabsComponent';
+import RepairShopTableComponent from './RepairShopTableComponent';
 
 export class RepairShopInformationComponent extends React.Component<any, any> {
     render() {
         return (
             <div className="tab-center">
                 <div id="hero-repair-information-background">
-                    <h1>Repair Shop Information</h1>
+                    {/* <h1>Repair Shop Information</h1> */}
                     <hr></hr>
                     <HomeTabComponent />
                     <RepairShopTabsComponent />
@@ -19,6 +20,7 @@ export class RepairShopInformationComponent extends React.Component<any, any> {
                             enter new repair shop information, update repair shop information and 
                             delete repair shop information.
                         </p>
+                        <RepairShopTableComponent />
                     </div>
                 </div>
             </div>

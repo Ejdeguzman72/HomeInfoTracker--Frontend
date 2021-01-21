@@ -1,6 +1,7 @@
 import React from 'react';
 import CardTabsComponent from '../TabsComponents/CardTabsComponent';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
+import CardInformationTableComponent from './CardInformationTableComponent';
 
 
 export class CardInformationComponent extends React.Component<any, any> {
@@ -8,7 +9,7 @@ export class CardInformationComponent extends React.Component<any, any> {
         return (
             <div className="tab-center">
                 <div id="hero-contact-information-background">
-                    <h1>Card Information</h1>
+                    {/* <h1>Card Information</h1> */}
                     <hr></hr>
                     <HomeTabComponent />
                     <CardTabsComponent />
@@ -17,6 +18,7 @@ export class CardInformationComponent extends React.Component<any, any> {
                         <p>The following pertains to card information. Cards can be listed as credit/debit cards.
                         Information will consist of bank information, name on card, expiration date, card number and security code.
                         </p>
+                        <CardInformationTableComponent />
                     </div>
                 </div>
             </div>

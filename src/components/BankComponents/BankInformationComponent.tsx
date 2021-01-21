@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import BankTabComponent from '../TabsComponents/BankTabsComponent';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
+import BankInformationTableComponent from './BankInformationTableComponent';
 
 
 export class BankInformationComponent extends React.Component<any, any> {
@@ -9,8 +10,8 @@ export class BankInformationComponent extends React.Component<any, any> {
         return (
             <div className="tab-center">
                 <div id="hero-car-information-background">
-                    <h1>Bank Information</h1>
-                    <hr></hr>
+                    {/* <h1>Bank Information</h1> */}
+                    {/* <hr></hr> */}
                     <HomeTabComponent />
                     <BankTabComponent />
                     <br></br>
@@ -19,6 +20,7 @@ export class BankInformationComponent extends React.Component<any, any> {
                             Users are able to0 retrieve bank information, enter new bank information,
                             update bank information and delete bank information. 
                         </p>
+                        <BankInformationTableComponent />
                     </Container>
                 </div>
             </div>

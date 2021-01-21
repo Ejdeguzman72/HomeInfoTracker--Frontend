@@ -119,17 +119,16 @@
 .contact-information-container {
   margin: auto;
   padding: 20px;
-  text-align: center;
-  font-size: 2em;
-  height: 70vh;
-  width: 50%;
-  border-style: solid;
   border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px #888888;
   background-color: lightyellow;
+  font-size: 2em;
   font-family: fantasy;
-  box-shadow: 10px 18px #888888;
-  overflow-wrap: break-word;
-  overflow: scroll;
+  height: 80vh;
+  width: 100%;
+  /* overflow: scroll; */
+  text-align: center;
 }
 
 .contact-information-container p{
@@ -147,7 +146,7 @@
   background-position: center center;
   top: 0;
   bottom: 0;
-  height: 100vh;
+  height: 150vh;
   width: 100%;
   z-index: -10;
   margin: 0;
@@ -1560,11 +1559,11 @@
   border-style: solid;
   box-shadow: 5px 10px 18px #888888;
   background-color: lightyellow;
-  font-size: 1em;
+  font-size: 2em;
   font-family: fantasy;
-  height: 50vh;
-  width: 50%;
-  overflow: scroll;
+  height: 80vh;
+  width: 70%;
+  /* overflow: scroll; */
   text-align: center;
 }
 
@@ -1608,7 +1607,7 @@
 
 .doctor-office-info-container {
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   border-color: black;
   border-style: solid;
   background-color: lightyellow;
@@ -1616,8 +1615,8 @@
   font-family: fantasy;
   box-shadow: 5px 10px 18px #888888;
   font-family: fantasy;
-  height: 50vh;
-  width: 50%;
+  height: auto;
+  width: 100%;
   text-align: center;
 }
 
