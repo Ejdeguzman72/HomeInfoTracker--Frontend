@@ -700,12 +700,12 @@
 /* Financial - Bank Info CSS----------------------------------------------------------------------------------------*/
 
 #bank-information-container {
-  margin: auto;
+  /* margin: auto; */
   padding: 20px;
   text-align: center;
   font-size: 1em;
-  width: 50%;
-  height: 70vh;
+  width: 100%;
+  height: auto;
   font-family: fantasy;
   border-color: black;
   border-style: solid;
