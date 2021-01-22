@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-// import AutoTransactionService from '../../../services/auto-transaction-service';
+import CarRecordsServices from '../../services/CarRecordServices';
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportCarRecordsCSV from './ExportCarRecordsCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -45,41 +45,35 @@ const tableIcons = {
 export default function CarRecordInformastionTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Bank ID', field: 'bankid', hidden: true },
-      { title: 'Name', field: 'name' },
-      { title: 'Address', field: 'address' },
-      { title: 'City', field: 'city' },
-      { title: 'State', field: 'state' },
-      { title: 'Zip', field: 'zip'}
+      { title: 'Car Record ID', field: 'carRecordId', hidden: true },
+      { title: 'Repair Shop', field: 'repairShopId' },
+      { title: 'Car Job', field: 'carJobId' },
+      { title: 'Amount', field: 'amount' }
     ],
   });
 
   const [entries, setEntries] = useState({
     data: [
       {
-        bankid: 0,
-        name: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: ""
+        carRecordId: 0,
+        repairShopId: "",
+        carJobId: "",
+        amonut: 0
       }
     ]
   });
 
-  const [fileName, setFileName] = useState("Bank Information");
+  const [fileName, setFileName] = useState("Car Records");
 
   useEffect(() => {
-    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
+    CarRecordsServices.GET_ALL_CAR_RECORD_INFO().then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
-            bankid: e1.bankid,
-            name: e1.name,
-            address: e1.address,
-            city: e1.city,
-            state: e1.state,
-            zip: e1.zip
+            carRecordId: e1.carRecordId,
+            repairShopId: e1.repairShopId,
+            carJohbId: e1.carJobId,
+            amount: e1.amount
         });
         console.log(data);
       });
@@ -91,7 +85,7 @@ export default function CarRecordInformastionTableComponent() {
   }, []);
 
   const handleRowAdd = (newData, resolve) => {
-    Axios.post('http://localhost:8080/app/auto-transactions/add-auto-transaction-information', newData)
+    Axios.post('http://localhost:8080/app/car-records/add-a-record', newData)
       .then(res => {
         console.log(newData + "this is newData");
         let dataToAdd = [...entries.data]
@@ -103,10 +97,10 @@ export default function CarRecordInformastionTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.autoTransactionId}`)
+    Axios.put(`http://localhost:8080/app/car-records/car-record/${oldData.carRecordId}`)
       .then(res => {
         const dataUpdate = [...entries.data];
-        const index = oldData.tabledata.autoTransactionId;
+        const index = oldData.tabledata.carRecordId;
         console.log(index + "this is index")
         dataUpdate[index] = newData;
         setEntries([...dataUpdate]);
@@ -120,10 +114,10 @@ export default function CarRecordInformastionTableComponent() {
 
   const handleRowDelete = (oldData, resolve) => {
     console.log(oldData.tableData.autoTransactionId);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.autoTransactionId}`)
+    Axios.delete(`http://localhost:8080/app/car-records/car-record/${oldData.carRecordId}`)
       .then(res => {
         const dataDelete = [...entries.data];
-        const index = oldData.tableData.autoTransactionId;
+        const index = oldData.tableData.carRecordId;
         dataDelete.splice(index, 1);
         setEntries([...dataDelete]);
         resolve();
@@ -146,7 +140,7 @@ export default function CarRecordInformastionTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportCarRecordsCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>

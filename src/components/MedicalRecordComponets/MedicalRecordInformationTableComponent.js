@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-// import AutoTransactionService from '../../../services/auto-transaction-service';
+import MedicalRecordServices from '../../services/MedicaRecordsServices';
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportMedicalRecordCSV from './ExportMedicalRecordCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -45,24 +45,24 @@ const tableIcons = {
 export default function MedicalRecordInformationTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Bank ID', field: 'bankid', hidden: true },
-      { title: 'Name', field: 'name' },
-      { title: 'Address', field: 'address' },
-      { title: 'City', field: 'city' },
-      { title: 'State', field: 'state' },
-      { title: 'Zip', field: 'zip'}
+      { title: 'Medical Record ID', field: 'medicalRecordId', hidden: true },
+      { title: 'Doctor Office ID', field: 'doctorOfficeId' },
+      { title: 'Person ID', field: 'personid' },
+      { title: 'Amount', field: 'amount' },
+      { title: 'Doctor Name', field: 'doctorName' },
+      { title: 'Description', field: 'description'}
     ],
   });
 
   const [entries, setEntries] = useState({
     data: [
       {
-        bankid: 0,
-        name: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: ""
+        medicalRecordId: 0,
+        doctorOfficeId: 0,
+        personid: 0,
+        amount: 0,
+        doctorName: "",
+        description: ""
       }
     ]
   });
@@ -70,16 +70,16 @@ export default function MedicalRecordInformationTableComponent() {
   const [fileName, setFileName] = useState("Bank Information");
 
   useEffect(() => {
-    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
+    MedicalRecordServices.GET_ALL_MEDICAL_RECORD_INFO().then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
-            bankid: e1.bankid,
-            name: e1.name,
-            address: e1.address,
-            city: e1.city,
-            state: e1.state,
-            zip: e1.zip
+          medicalRecordId: e1.medicalRecordId,
+          doctorOfficeId: e1.doctorOfficeId,
+          personid: e1.personid,
+          amount: e1.amount,
+          doctorName: e1.doctorName,
+          description: e1.description
         });
         console.log(data);
       });
@@ -91,7 +91,7 @@ export default function MedicalRecordInformationTableComponent() {
   }, []);
 
   const handleRowAdd = (newData, resolve) => {
-    Axios.post('http://localhost:8080/app/auto-transactions/add-auto-transaction-information', newData)
+    Axios.post('http://localhost:8080/app/medical-records/add-medical-record', newData)
       .then(res => {
         console.log(newData + "this is newData");
         let dataToAdd = [...entries.data]
@@ -103,10 +103,10 @@ export default function MedicalRecordInformationTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.autoTransactionId}`)
+    Axios.put(`http://localhost:8080/app/medical-records/medical-record/${oldData.medicalRecordId}`)
       .then(res => {
         const dataUpdate = [...entries.data];
-        const index = oldData.tabledata.autoTransactionId;
+        const index = oldData.tabledata.medicalRecordId;
         console.log(index + "this is index")
         dataUpdate[index] = newData;
         setEntries([...dataUpdate]);
@@ -120,10 +120,10 @@ export default function MedicalRecordInformationTableComponent() {
 
   const handleRowDelete = (oldData, resolve) => {
     console.log(oldData.tableData.autoTransactionId);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.autoTransactionId}`)
+    Axios.delete(`http://localhost:8080/app/medical-records/medical-record/${oldData.medicalRecordId}`)
       .then(res => {
         const dataDelete = [...entries.data];
-        const index = oldData.tableData.autoTransactionId;
+        const index = oldData.tableData.medicalRecordId;
         dataDelete.splice(index, 1);
         setEntries([...dataDelete]);
         resolve();
@@ -146,7 +146,7 @@ export default function MedicalRecordInformationTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportMedicalRecordCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>

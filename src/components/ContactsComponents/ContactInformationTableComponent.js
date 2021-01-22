@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-// import AutoTransactionService from '../../../services/auto-transaction-service';
+import ContactServices from '../../services/ContactServies';
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportContactBookCSV from './ExportContactBookCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -45,20 +45,26 @@ const tableIcons = {
 export default function ContactInformationTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Bank ID', field: 'bankid', hidden: true },
-      { title: 'Name', field: 'name' },
+      { title: 'Contact ID', field: 'contactid', hidden: true },
+      { title: 'First Name', field: 'firstname' },
+      { title: 'Last Name',  field: 'lastname'},
+      { title: 'Phone Number', field: 'phone'},
+      { title: 'Email', field: 'email'},
       { title: 'Address', field: 'address' },
       { title: 'City', field: 'city' },
       { title: 'State', field: 'state' },
-      { title: 'Zip', field: 'zip'}
+      { title: 'Zip', field: 'zipcode'}
     ],
   });
 
   const [entries, setEntries] = useState({
     data: [
       {
-        bankid: 0,
-        name: "",
+        contactid: 0,
+        firstname: "",
+        lastname: "",
+        phone: "",
+        email: "",
         address: "",
         city: "",
         state: "",
@@ -67,15 +73,18 @@ export default function ContactInformationTableComponent() {
     ]
   });
 
-  const [fileName, setFileName] = useState("Bank Information");
+  const [fileName, setFileName] = useState("Contact Book");
 
   useEffect(() => {
-    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
+    ContactServices.GET_ALL_CONTACTS().then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
-            bankid: e1.bankid,
-            name: e1.name,
+            contactid: e1.contactid,
+            firstname: e1.firstname,
+            lastname: e1.lastname,
+            phone: e1.phone,
+            email: e1.email,
             address: e1.address,
             city: e1.city,
             state: e1.state,
@@ -91,7 +100,7 @@ export default function ContactInformationTableComponent() {
   }, []);
 
   const handleRowAdd = (newData, resolve) => {
-    Axios.post('http://localhost:8080/app/auto-transactions/add-auto-transaction-information', newData)
+    Axios.post('http://localhost:8080/app/contact-book/contacts', newData)
       .then(res => {
         console.log(newData + "this is newData");
         let dataToAdd = [...entries.data]
@@ -103,10 +112,10 @@ export default function ContactInformationTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.autoTransactionId}`)
+    Axios.put(`http://localhost:8080/app/contact-book/contact/${oldData.contactid}`)
       .then(res => {
         const dataUpdate = [...entries.data];
-        const index = oldData.tabledata.autoTransactionId;
+        const index = oldData.tabledata.contactid;
         console.log(index + "this is index")
         dataUpdate[index] = newData;
         setEntries([...dataUpdate]);
@@ -119,11 +128,11 @@ export default function ContactInformationTableComponent() {
   }
 
   const handleRowDelete = (oldData, resolve) => {
-    console.log(oldData.tableData.autoTransactionId);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.autoTransactionId}`)
+    console.log(oldData.tableData.contactid);
+    Axios.delete(`http://localhost:8080/app/contact-book/contact/${oldData.contactid}`)
       .then(res => {
         const dataDelete = [...entries.data];
-        const index = oldData.tableData.autoTransactionId;
+        const index = oldData.tableData.contactid;
         dataDelete.splice(index, 1);
         setEntries([...dataDelete]);
         resolve();
@@ -146,13 +155,13 @@ export default function ContactInformationTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportContactBookCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>
       <Box border={3} borderRadius={16}>
         <MaterialTable
-          title="Contacts"
+          title="Contact Book"
           icons={tableIcons}
           columns={state.columns}
           data={entries.data}

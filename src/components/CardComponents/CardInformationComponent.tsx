@@ -2,22 +2,22 @@ import React from 'react';
 import CardTabsComponent from '../TabsComponents/CardTabsComponent';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import CardInformationTableComponent from './CardInformationTableComponent';
-
+import { Helmet } from 'react-helmet';
 
 export class CardInformationComponent extends React.Component<any, any> {
     render() {
         return (
-            <div className="tab-center">
+            <div>
+                <Helmet>
+                    <title>Card Information</title>
+                </Helmet>
                 <div id="hero-contact-information-background">
-                    {/* <h1>Card Information</h1> */}
+                    <h1>Card Information</h1>
                     <hr></hr>
-                    <HomeTabComponent />
-                    <CardTabsComponent />
-                    <br></br>
-                    <div id="card-information-container">
-                        <p>The following pertains to card information. Cards can be listed as credit/debit cards.
-                        Information will consist of bank information, name on card, expiration date, card number and security code.
-                        </p>
+                    <div className="tab-center">
+                        <HomeTabComponent />
+                        <CardTabsComponent />
+                        <br></br>
                         <CardInformationTableComponent />
                     </div>
                 </div>

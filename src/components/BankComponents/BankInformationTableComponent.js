@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportBankInfoCSV from './ExportBankInfoCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -146,7 +146,7 @@ export default function BankInformastionTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportBankInfoCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-// import AutoTransactionService from '../../../services/auto-transaction-service';
+import CardServices from '../../services/CardServices';
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportCardInfoCSV from './ExportCardInfoCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -45,41 +45,41 @@ const tableIcons = {
 export default function CardInformationTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Bank ID', field: 'bankid', hidden: true },
-      { title: 'Name', field: 'name' },
-      { title: 'Address', field: 'address' },
-      { title: 'City', field: 'city' },
-      { title: 'State', field: 'state' },
-      { title: 'Zip', field: 'zip'}
+      { title: 'Card ID Number', field: 'cardid', hidden: true },
+      { title: 'Card Type ID', field: 'cardTypeId' },
+      { title: 'Bank ID', field: 'bankid' },
+      { title: 'Cardholder Name', field: 'name' },
+      { title: 'Card Number', field: 'cardNumber' },
+      { title: 'Expiration Date', field: 'expirationDate'}
     ],
   });
 
   const [entries, setEntries] = useState({
     data: [
       {
-        bankid: 0,
+        cardid: 0,
+        cardTypeId: 0,
+        bankId: 0,
         name: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: ""
+        cardNumber: "",
+        expirationDate: ""
       }
     ]
   });
 
-  const [fileName, setFileName] = useState("Bank Information");
+  const [fileName, setFileName] = useState("Card Information");
 
   useEffect(() => {
-    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
+      CardServices.GET_ALL_CARD_INFO().then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
-            bankid: e1.bankid,
+            cardid: e1.cardid,
+            cardTypeId: e1.cardTypeId,
+            bankId: e1.bankId,
             name: e1.name,
-            address: e1.address,
-            city: e1.city,
-            state: e1.state,
-            zip: e1.zip
+            cardNumber: e1.cardNumber,
+            expirationDate: e1.expirationDate
         });
         console.log(data);
       });
@@ -91,7 +91,7 @@ export default function CardInformationTableComponent() {
   }, []);
 
   const handleRowAdd = (newData, resolve) => {
-    Axios.post('http://localhost:8080/app/auto-transactions/add-auto-transaction-information', newData)
+    Axios.post('http://localhost:8080/app/cards/add-a-card', newData)
       .then(res => {
         console.log(newData + "this is newData");
         let dataToAdd = [...entries.data]
@@ -103,10 +103,10 @@ export default function CardInformationTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.autoTransactionId}`)
+    Axios.put(`http://localhost:8080/app/cards/card/${oldData.cardid}`)
       .then(res => {
         const dataUpdate = [...entries.data];
-        const index = oldData.tabledata.autoTransactionId;
+        const index = oldData.tabledata.cardid;
         console.log(index + "this is index")
         dataUpdate[index] = newData;
         setEntries([...dataUpdate]);
@@ -120,10 +120,10 @@ export default function CardInformationTableComponent() {
 
   const handleRowDelete = (oldData, resolve) => {
     console.log(oldData.tableData.autoTransactionId);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.autoTransactionId}`)
+    Axios.delete(`http://localhost:8080/app/cards/card/${oldData.cardid}`)
       .then(res => {
         const dataDelete = [...entries.data];
-        const index = oldData.tableData.autoTransactionId;
+        const index = oldData.tableData.cardid;
         dataDelete.splice(index, 1);
         setEntries([...dataDelete]);
         resolve();
@@ -146,7 +146,7 @@ export default function CardInformationTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportCardInfoCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-// import AutoTransactionService from '../../../services/auto-transaction-service';
+import DoctorOfficeServices from '../../services/DoctorOfficeServices';
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportDoctorOfficeCSV from './ExportDoctorOfficeCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -45,7 +45,8 @@ const tableIcons = {
 export default function DoctorInformationTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Bank ID', field: 'bankid', hidden: true },
+      { title: 'Doctor Office ID', field: 'doctorOfficeId', hidden: true },
+      { title: 'Office Type', field: 'doctorOfficeTypeId'},
       { title: 'Name', field: 'name' },
       { title: 'Address', field: 'address' },
       { title: 'City', field: 'city' },
@@ -57,7 +58,8 @@ export default function DoctorInformationTableComponent() {
   const [entries, setEntries] = useState({
     data: [
       {
-        bankid: 0,
+        doctorOfficeId: 0,
+        doctorOfficeTypeId: 0,
         name: "",
         address: "",
         city: "",
@@ -67,14 +69,15 @@ export default function DoctorInformationTableComponent() {
     ]
   });
 
-  const [fileName, setFileName] = useState("Bank Information");
+  const [fileName, setFileName] = useState("Doctor Offices");
 
   useEffect(() => {
-    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
+    DoctorOfficeServices.GET_ALL_DOCTOR_INFO().then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
-            bankid: e1.bankid,
+            doctorOfficeId: e1.doctorOfficeId,
+            doctorOfficeTypeId: e1.doctorOfficeId,
             name: e1.name,
             address: e1.address,
             city: e1.city,
@@ -91,7 +94,7 @@ export default function DoctorInformationTableComponent() {
   }, []);
 
   const handleRowAdd = (newData, resolve) => {
-    Axios.post('http://localhost:8080/app/auto-transactions/add-auto-transaction-information', newData)
+    Axios.post('http://localhost:8080/app/doctor-offices/add-a-doctor-office', newData)
       .then(res => {
         console.log(newData + "this is newData");
         let dataToAdd = [...entries.data]
@@ -103,10 +106,10 @@ export default function DoctorInformationTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.autoTransactionId}`)
+    Axios.put(`http://localhost:8080/app/doctor-offices/doctor-office/${oldData.doctorOfficeId}`)
       .then(res => {
         const dataUpdate = [...entries.data];
-        const index = oldData.tabledata.autoTransactionId;
+        const index = oldData.tabledata.doctorOfficeId;
         console.log(index + "this is index")
         dataUpdate[index] = newData;
         setEntries([...dataUpdate]);
@@ -120,10 +123,10 @@ export default function DoctorInformationTableComponent() {
 
   const handleRowDelete = (oldData, resolve) => {
     console.log(oldData.tableData.autoTransactionId);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.autoTransactionId}`)
+    Axios.delete(`http://localhost:8080/app/doctor-offices/doctor-office/${oldData.doctorOfficeId}`)
       .then(res => {
         const dataDelete = [...entries.data];
-        const index = oldData.tableData.autoTransactionId;
+        const index = oldData.tableData.doctorOfficeId;
         dataDelete.splice(index, 1);
         setEntries([...dataDelete]);
         resolve();
@@ -146,7 +149,7 @@ export default function DoctorInformationTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportDoctorOfficeCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>

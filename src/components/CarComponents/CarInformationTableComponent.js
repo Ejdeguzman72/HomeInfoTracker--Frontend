@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-// import AutoTransactionService from '../../../services/auto-transaction-service';
+import CarServices from '../../services/CarServices';
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportCarInfoCSV from './ExportCarInfoCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -45,32 +45,34 @@ const tableIcons = {
 export default function CarInformastionTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Bank ID', field: 'bankid', hidden: true },
-      { title: 'Name', field: 'name' },
-      { title: 'Address', field: 'address' },
-      { title: 'City', field: 'city' },
-      { title: 'State', field: 'state' },
-      { title: 'Zip', field: 'zip'}
+      { title: 'Car ID Number', field: 'carid', hidden: true },
+      { title: 'Manufacturer', field: 'make' },
+      { title: 'Model', field: 'model' },
+      { title: 'Year', field: 'year' },
+      { title: 'Transmission', field: 'transmission' },
+      { title: 'Air Condition', field: 'ac'},
+      { title: 'Capacity', field: 'capacity'}
     ],
   });
 
   const [entries, setEntries] = useState({
     data: [
       {
-        bankid: 0,
-        name: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: ""
+        carid: 0,
+        make: "",
+        model: "",
+        year: "",
+        transmission: "",
+        ac: "",
+        capacity: 0
       }
     ]
   });
 
-  const [fileName, setFileName] = useState("Bank Information");
+  const [fileName, setFileName] = useState("Vehicles");
 
   useEffect(() => {
-    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
+    CarServices.GET_ALL_CAR_INFO().then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
@@ -91,7 +93,7 @@ export default function CarInformastionTableComponent() {
   }, []);
 
   const handleRowAdd = (newData, resolve) => {
-    Axios.post('http://localhost:8080/app/auto-transactions/add-auto-transaction-information', newData)
+    Axios.post('http://localhost:8080/app/cars/add-a-car', newData)
       .then(res => {
         console.log(newData + "this is newData");
         let dataToAdd = [...entries.data]
@@ -103,10 +105,10 @@ export default function CarInformastionTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.autoTransactionId}`)
+    Axios.put(`http://localhost:8080/app/cars/car/${oldData.carid}`)
       .then(res => {
         const dataUpdate = [...entries.data];
-        const index = oldData.tabledata.autoTransactionId;
+        const index = oldData.tabledata.carid;
         console.log(index + "this is index")
         dataUpdate[index] = newData;
         setEntries([...dataUpdate]);
@@ -120,10 +122,10 @@ export default function CarInformastionTableComponent() {
 
   const handleRowDelete = (oldData, resolve) => {
     console.log(oldData.tableData.autoTransactionId);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.autoTransactionId}`)
+    Axios.delete(`http://localhost:8080/app/cars/car/${oldData.carid}`)
       .then(res => {
         const dataDelete = [...entries.data];
-        const index = oldData.tableData.autoTransactionId;
+        const index = oldData.tableData.carid;
         dataDelete.splice(index, 1);
         setEntries([...dataDelete]);
         resolve();
@@ -146,7 +148,7 @@ export default function CarInformastionTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportCarInfoCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>

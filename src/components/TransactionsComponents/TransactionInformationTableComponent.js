@@ -19,7 +19,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import Axios from 'axios';
 import Box from '@material-ui/core/Box';
-import ExportAutoFinanceCSV from './ExportAutoFinanceCSV';
+import ExportTransactionsCSV from './ExportTransactionsCSV';
 import { Col,Row } from 'react-bootstrap';
 
 const tableIcons = {
@@ -45,41 +45,38 @@ const tableIcons = {
 export default function TransactionInformationTableComponent() {
   const [state] = React.useState({
     columns: [
-      { title: 'Bank ID', field: 'bankid', hidden: true },
-      { title: 'Name', field: 'name' },
-      { title: 'Address', field: 'address' },
-      { title: 'City', field: 'city' },
-      { title: 'State', field: 'state' },
-      { title: 'Zip', field: 'zip'}
+      { title: 'Transaction ID', field: 'transactionid', hidden: true },
+      { title: 'Amount', field: 'amount' },
+      { title: 'Transaction Type', field: 'transactionType' },
+      { title: 'Recipient', field: 'recipient' },
+      { title: 'Date', field: 'transactionDate' }
     ],
   });
 
   const [entries, setEntries] = useState({
     data: [
       {
-        bankid: 0,
-        name: "",
-        address: "",
-        city: "",
-        state: "",
-        zip: ""
+        transactionid: 0,
+        amount: 0,
+        transactionType: 0,
+        recipient: "",
+        transactionDate: ""
       }
     ]
   });
 
-  const [fileName, setFileName] = useState("Bank Information");
+  const [fileName, setFileName] = useState("Transaction Information");
 
   useEffect(() => {
-    Axios.get('http://localhost:8080/app/auto-transactions/add-auto-transaction-information/all').then(response => {
+    Axios.get('http://localhost:8080/app/transactions/all').then(response => {
       let data = [];
       response.data.forEach(e1 => {
         data.push({
-            bankid: e1.bankid,
-            name: e1.name,
-            address: e1.address,
-            city: e1.city,
-            state: e1.state,
-            zip: e1.zip
+          transactionid: e1.transactionid,
+          amount: e1.amount,
+          transactionType: e1.transactionType,
+          recipient: e1.recipient,
+          transactionDate: e1.transactionDate
         });
         console.log(data);
       });
@@ -91,7 +88,7 @@ export default function TransactionInformationTableComponent() {
   }, []);
 
   const handleRowAdd = (newData, resolve) => {
-    Axios.post('http://localhost:8080/app/auto-transactions/add-auto-transaction-information', newData)
+    Axios.post('http://localhost:8080/app/transactions/add-transactions', newData)
       .then(res => {
         console.log(newData + "this is newData");
         let dataToAdd = [...entries.data]
@@ -103,10 +100,10 @@ export default function TransactionInformationTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.autoTransactionId}`)
+    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.transactionid}`)
       .then(res => {
         const dataUpdate = [...entries.data];
-        const index = oldData.tabledata.autoTransactionId;
+        const index = oldData.tabledata.transactionid;
         console.log(index + "this is index")
         dataUpdate[index] = newData;
         setEntries([...dataUpdate]);
@@ -119,11 +116,11 @@ export default function TransactionInformationTableComponent() {
   }
 
   const handleRowDelete = (oldData, resolve) => {
-    console.log(oldData.tableData.autoTransactionId);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.autoTransactionId}`)
+    console.log(oldData.tableData.transactionid);
+    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.transactionid}`)
       .then(res => {
         const dataDelete = [...entries.data];
-        const index = oldData.tableData.autoTransactionId;
+        const index = oldData.tableData.transactionid;
         dataDelete.splice(index, 1);
         setEntries([...dataDelete]);
         resolve();
@@ -146,7 +143,7 @@ export default function TransactionInformationTableComponent() {
 
         </Col>
         <Col md={2}>
-          {/* <ExportAutoFinanceCSV csvData={entries.data} fileName={fileName} /> */}
+          <ExportTransactionsCSV csvData={entries.data} fileName={fileName} />
         </Col>
       </Row>
       <br></br>
