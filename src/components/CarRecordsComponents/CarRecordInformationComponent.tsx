@@ -4,6 +4,8 @@ import CarRecordsTabsComponent from '../TabsComponents/CarRecordsTabComponent';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import CarRecordInformastionTableComponent from './CarRecordInformationTableComponent';
 import { Helmet } from 'react-helmet';
+import CarRecordsUploadsTabsComponent from '../TabsComponents/CarRecordsUploadsTabComponent';
+import { FooterComponent } from '../footer-component/footer-component';
 
 export class CarRecordInformationComponent extends React.Component<any, any> {
     render() {
@@ -18,10 +20,12 @@ export class CarRecordInformationComponent extends React.Component<any, any> {
                     <div className="tab-center">
                         <HomeTabComponent />
                         <CarRecordsTabsComponent />
+                        <CarRecordsUploadsTabsComponent />
                         <br></br>                   
                         <CarRecordInformastionTableComponent />
                     </div>
                 </div>
+                <FooterComponent />
             </div>
         )
     }

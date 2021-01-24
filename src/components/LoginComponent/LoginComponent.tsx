@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router';
 import { Button, Form } from 'react-bootstrap';
+import { FooterComponent } from '../footer-component/footer-component';
 
 export default class Login extends React.Component<any, any> {
   constructor(props: any) {
@@ -53,21 +54,22 @@ export default class Login extends React.Component<any, any> {
           <br></br>
           <div className="login-container">
             {this.state.shouldRedirect ? <Redirect to="/home" /> : null}
-           
-            <input type="text" name="username" className="login-input" placeholder="username" onChange={(e:any) => this.change(e)} value={this.state.username} />
+
+            <input type="text" name="username" className="login-input" placeholder="username" onChange={(e: any) => this.change(e)} value={this.state.username} />
             <br></br><br></br>
-           
+
             <input type="password" name="password" className="login-input" placeholder="password" onChange={(e: any) => this.change(e)} value={this.state.password} />
             <br></br><br></br>
-            <Button type="button" size="lg" variant="light" onClick={(e: any) => this.submit(e)}>
-              --Login--
-      </Button>
+            <button id="login-btn" type="button"  onClick={(e: any) => this.submit(e)}>
+              Login
+            </button>
             <br></br><br></br>
-            <Button type="button" size="lg" variant="light">
+            <button type="button" id="register-btn">
               Register
-      </Button>
+            </button>
           </div>
         </div>
+        <FooterComponent />
       </div>
     )
   }

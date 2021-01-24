@@ -4,6 +4,7 @@ import BankTabComponent from '../TabsComponents/BankTabsComponent';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import BankInformationTableComponent from './BankInformationTableComponent';
 import { Helmet } from 'react-helmet';
+import { FooterComponent } from '../footer-component/footer-component';
 
 export class BankInformationComponent extends React.Component<any, any> {
     render() {
@@ -22,6 +23,7 @@ export class BankInformationComponent extends React.Component<any, any> {
                         <BankInformationTableComponent />
                     </div>
                 </div>
+                <FooterComponent />
             </div>
         )
     }

@@ -4,6 +4,8 @@ import { Container } from 'react-bootstrap';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import TransactionInformationTableComponent from './TransactionInformationTableComponent';
 import { Helmet } from 'react-helmet';
+import TransactionUploadsTabsComponent from '../TabsComponents/TransactionUploadsTabComponent';
+import { FooterComponent } from '../footer-component/footer-component';
 
 export class TransactionInformationComponent extends React.Component<any, any> {
     render() {
@@ -18,10 +20,12 @@ export class TransactionInformationComponent extends React.Component<any, any> {
                     <div className="tab-center">
                         <HomeTabComponent />
                         <TransactionTabsComponent />
+                        <TransactionUploadsTabsComponent />
                         <br></br>
                         <TransactionInformationTableComponent />
                     </div>
                 </div>
+                <FooterComponent />
             </div>
         )
     }

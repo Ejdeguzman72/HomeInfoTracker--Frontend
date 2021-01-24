@@ -100,7 +100,7 @@ export default function TransactionInformationTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/auto-transactions/update-auto-transaction/${oldData.transactionid}`)
+    Axios.put(`http://localhost:8080/app/transactions/transaction/${oldData.transactionid}`, newData)
       .then(res => {
         const dataUpdate = [...entries.data];
         const index = oldData.tabledata.transactionid;
@@ -117,7 +117,7 @@ export default function TransactionInformationTableComponent() {
 
   const handleRowDelete = (oldData, resolve) => {
     console.log(oldData.tableData.transactionid);
-    Axios.delete(`http://localhost:8080/app/auto-transactions/auto-transaction/${oldData.transactionid}`)
+    Axios.delete(`http://localhost:8080/app/transactions/transaction/${oldData.transactionid}`)
       .then(res => {
         const dataDelete = [...entries.data];
         const index = oldData.tableData.transactionid;
@@ -158,10 +158,10 @@ export default function TransactionInformationTableComponent() {
               new Promise((resolve) => {
                 handleRowAdd(newData, resolve)
               }),
-            // onRowUpdate: (newData, oldData) =>
-            //   new Promise((resolve) => {
-            //     handleRowUpdate(newData, oldData, resolve)
-            //   }),
+            onRowUpdate: (newData, oldData) =>
+              new Promise((resolve) => {
+                handleRowUpdate(newData, oldData, resolve)
+              }),
             onRowDelete: (oldData) =>
               new Promise((resolve) => {
                 handleRowDelete(oldData, resolve)

@@ -3,6 +3,7 @@ import CarTabsComponent from '../TabsComponents/CarTabsComponent';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import CarInformastionTableComponent from './CarInformationTableComponent';
 import { Helmet } from 'react-helmet';
+import { FooterComponent } from '../footer-component/footer-component';
 
 export class CarInformationComponent extends React.Component<any, any> {
     render() {
@@ -21,6 +22,7 @@ export class CarInformationComponent extends React.Component<any, any> {
                         <CarInformastionTableComponent />
                     </div>
                 </div>
+                <FooterComponent />
             </div>
         )
     }

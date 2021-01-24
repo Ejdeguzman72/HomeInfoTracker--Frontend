@@ -6,14 +6,14 @@ import { FooterComponent } from '../../footer-component/footer-component';
 import { Row, Col } from 'react-bootstrap';
 import { FireBasePhotoGalleryContainer } from './firebase-photo-gallery-container';
 
-export class PhotoVideoPageComponent extends React.Component<any, any> {
+export class MediaPageComponent extends React.Component<any, any> {
     render() {
         return (
             <div>
                 <Helmet>
                     <title>Media</title>
                 </Helmet>
-                <div id="white-background">
+                <div className="hero-media-background">
                     <Row>
                         <Col md={4}>
                             <MediaPhotoPageContainerComponent />
@@ -27,7 +27,7 @@ export class PhotoVideoPageComponent extends React.Component<any, any> {
                     </Row>
                     <br></br>
                     <br></br>
-                    <Row>
+                    {/* <Row>
                         <Col md={4}>
 
                         </Col>
@@ -37,7 +37,7 @@ export class PhotoVideoPageComponent extends React.Component<any, any> {
                         <Col md={4}>
                             
                         </Col>
-                    </Row>
+                    </Row> */}
                 </div>
                 <FooterComponent />
             </div>

@@ -97,7 +97,7 @@ export default function CarRecordInformastionTableComponent() {
   }
 
   const handleRowUpdate = (newData, oldData, resolve) => {
-    Axios.put(`http://localhost:8080/app/car-records/car-record/${oldData.carRecordId}`)
+    Axios.put(`http://localhost:8080/app/car-records/car-record/${oldData.carRecordId}`, newData)
       .then(res => {
         const dataUpdate = [...entries.data];
         const index = oldData.tabledata.carRecordId;

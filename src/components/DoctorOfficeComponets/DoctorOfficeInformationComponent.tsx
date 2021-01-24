@@ -4,6 +4,7 @@ import DoctorOfficeTabsComponent from '../TabsComponents/DoctorOfficeTabsCompone
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import DoctorInformationTableComponent from './DoctorInformationTableComponent';
 import { Helmet } from 'react-helmet';
+import { FooterComponent } from '../footer-component/footer-component';
 
 export class DoctorOfficeInfomrationComponent extends React.Component<any, any> {
     render() {
@@ -22,6 +23,7 @@ export class DoctorOfficeInfomrationComponent extends React.Component<any, any> 
                         <DoctorInformationTableComponent />
                     </div>
                 </div>
+                <FooterComponent />
             </div>
         )
     }

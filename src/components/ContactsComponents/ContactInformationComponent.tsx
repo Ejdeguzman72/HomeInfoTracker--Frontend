@@ -4,6 +4,7 @@ import ContactTabsComponent from '../TabsComponents/ContactTabsComponent';
 import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import ContactInformationTableComponent from './ContactInformationTableComponent';
 import { Helmet } from 'react-helmet';
+import { FooterComponent } from '../footer-component/footer-component';
 
 export class ContactInfomrationComponent extends React.Component<any, any> {
     render() {
@@ -22,6 +23,7 @@ export class ContactInfomrationComponent extends React.Component<any, any> {
                         <ContactInformationTableComponent />
                     </div>
                 </div>
+                <FooterComponent />
             </div>
         )
     }

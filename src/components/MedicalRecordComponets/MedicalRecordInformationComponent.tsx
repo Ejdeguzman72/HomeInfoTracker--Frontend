@@ -3,6 +3,8 @@ import HomeTabComponent from '../TabsComponents/HomeTabComponent';
 import MedicalRecordsTabsComponent from '../TabsComponents/MedicalRecordsTabsComponent';
 import MedicalRecordInformationTableComponent from './MedicalRecordInformationTableComponent';
 import { Helmet } from 'react-helmet';
+import { FooterComponent } from '../footer-component/footer-component';
+import MedicalRecordsUploadsTabsComponent from '../TabsComponents/MedicalRecordsUploadsTabComponent';
 
 export class MedicalRecordInfomrationComponent extends React.Component<any, any> {
     render() {
@@ -17,10 +19,12 @@ export class MedicalRecordInfomrationComponent extends React.Component<any, any>
                     <div className="tab-center">
                         <HomeTabComponent />
                         <MedicalRecordsTabsComponent />
+                        <MedicalRecordsUploadsTabsComponent />
                         <br></br>
                         <MedicalRecordInformationTableComponent />
                     </div>
                 </div>
+                <FooterComponent />
             </div>
         )
     }

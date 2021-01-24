@@ -1,7 +1,7 @@
 import React from 'react';
-import UploadAutoFilesService from '../../services/CarRecordsUploadServices';
+import UploadMedicalFileUploadService from '../../services/medical-file-upload-service';
 
-export class AutoFinanceUploadComponent extends React.Component {
+export class MedicalFileUploadFiles extends React.Component {
     constructor(props) {
         super(props);
 
@@ -14,7 +14,7 @@ export class AutoFinanceUploadComponent extends React.Component {
             progress: 0,
             message: "",
 
-            fileInfos: []
+            medicalFileInfos: []
         };
     }
 
@@ -22,7 +22,6 @@ export class AutoFinanceUploadComponent extends React.Component {
         this.setState({
             selectedFiles: event.target.files
         });
-        console.log(this.state.selectedFiles + "this is selectedFiles for auto");
     }
 
     upload() {
@@ -33,7 +32,7 @@ export class AutoFinanceUploadComponent extends React.Component {
             currentFile: currentFile
         });
 
-        UploadAutoFilesService.uploadAutoFiles(currentFile, (event) => {
+        UploadMedicalFileUploadService.uploadMedicalFile(currentFile, (event) => {
             this.setState({
                 progress: Math.round((100 * event.loaded) / event.total),
             });
@@ -42,7 +41,7 @@ export class AutoFinanceUploadComponent extends React.Component {
                 this.setState({
                     message: response.data.message,
                 });
-                return UploadAutoFilesService.getAutoFiles();
+                return UploadMedicalFileUploadService.getMedicalFiles();
             })
             // .then((files) => {
             //     this.setState({
@@ -58,11 +57,10 @@ export class AutoFinanceUploadComponent extends React.Component {
     }
 
     componentDidMount() {
-        UploadAutoFilesService.getAutoFiles().then((response) => {
+        UploadMedicalFileUploadService.getMedicalFiles().then((response) => {
             this.setState({
-                fileInfos: response.data,
+                medicalFileInfos: response.data,
             })
-            console.log(this.state.fileInfos + "alksjhflkajsdjsfkdfkalh");
         });
     }
 
@@ -72,7 +70,7 @@ export class AutoFinanceUploadComponent extends React.Component {
             currentFile,
             progress,
             message,
-            fileInfos
+            medicalFileInfos
         } = this.state;
 
         return (
@@ -107,13 +105,13 @@ export class AutoFinanceUploadComponent extends React.Component {
                     {message}
                 </div>
 
-                <div className="card">
+                <div className="media-uploads-container-title">
                     <div className="card-header">List of Files</div>
-                    <ul className="list-group list-group-flush">
-                        {fileInfos &&
-                            fileInfos.map((file, index) => (
+                    <ul className="media-uploads-container">
+                        {medicalFileInfos &&
+                            medicalFileInfos.map((file, index) => (
                                 <li className="list-group-item" key={index}>
-                                    <a href={file.autoTrxFileUrl}>{file.autoTrxFilename}</a>
+                                    <a href={file.medicalTransactionFileUrl}>{file.medicalTransactionFileName}</a>
                                 </li>
                             ))}
                     </ul>
