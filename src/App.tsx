@@ -25,6 +25,8 @@ import { PhotoPageComponent } from './components/Media-Components/photo-page-com
 import { VideoPageComponent } from './components/Media-Components/video-page-component/video-page-component';
 import { VideoUploadPageComponent } from './components/Media-Components/video-upload-page-component/video-upload-page-component';
 import { getJwt } from './helper/jwt';
+import TransactionUploadPageComponent from './components/TransactionsComponents/TransactionUploadPageComponent';
+import MedicalRecordUploadPageComponent from './components/MedicalRecordComponets/MedicalRecordUploadPageComponent';
 
 const jwt = getJwt();
 
@@ -80,7 +82,10 @@ const App: React.FC = () => {
               jwt ?
               <Route path="/transaction-information" exact component={TransactionInformationComponent} /> : null
             }
-
+            {
+              jwt ?
+              <Route path="/transaction-uploads" exact component={TransactionUploadPageComponent} /> : null
+            }
             {/* Repair Shop Routes*/}
             {/* <Route path="/repair-shop-information" exact component={RepairShopInformationComponent} /> */}
 
@@ -95,7 +100,10 @@ const App: React.FC = () => {
               jwt ?
               <Route path="/medical-record-information" exact component={MedicalRecordInfomrationComponent} /> : null
             }
-
+            {
+              jwt ? 
+              <Route path="/medical-record-uploads" exact component={MedicalRecordUploadPageComponent} /> : null
+            }
             {/*Bank Information Routes */}
             {
               jwt ?

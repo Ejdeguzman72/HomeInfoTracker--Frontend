@@ -1,7 +1,7 @@
 import React from 'react';
 import UploadAutoFilesService from '../../services/CarRecordsUploadServices';
 
-export class AutoFinanceUploadComponent extends React.Component {
+export class MedicalRecordUploadComponent extends React.Component {
     constructor(props) {
         super(props);
 

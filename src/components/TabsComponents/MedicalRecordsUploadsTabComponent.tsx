@@ -9,7 +9,7 @@ const MedicalRecordsUploadsTabsComponent = () => {
                     <Col md={12}>
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item>
-                                <Nav.Link href="#medical-records-uploads-uploads" eventKey="first" id="tabs">Medical Records Uploads</Nav.Link>
+                                <Nav.Link href="#medical-records-uploads" eventKey="first" id="tabs">Medical Records Uploads</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Col>
