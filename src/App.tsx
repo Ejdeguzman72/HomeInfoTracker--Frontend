@@ -102,7 +102,7 @@ const App: React.FC = () => {
             }
             {
               jwt ? 
-              <Route path="/medical-record-uploads" exact component={MedicalRecordUploadPageComponent} /> : null
+              <Route path="/medical-records-uploads" exact component={MedicalRecordUploadPageComponent} /> : null
             }
             {/*Bank Information Routes */}
             {

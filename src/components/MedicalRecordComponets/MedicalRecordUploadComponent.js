@@ -107,9 +107,9 @@ export class MedicalRecordUploadComponent extends React.Component {
                     {message}
                 </div>
 
-                <div className="card">
+                <div className="media-uploads-container-title">
                     <div className="card-header">List of Files</div>
-                    <ul className="list-group list-group-flush">
+                    <ul className="media-uploads-container">
                         {fileInfos &&
                             fileInfos.map((file, index) => (
                                 <li className="list-group-item" key={index}>
